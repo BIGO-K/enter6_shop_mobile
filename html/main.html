@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko" class="__header-extend">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 소셜태그 -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<!--// 소셜태그 -->
+
+	<title>엔터식스 온라인몰</title>
+
+	<!-- 라이브러리 css -->
+	<link rel="stylesheet" href="../css/libs/fontello-custom.css">
+	<link rel="stylesheet" href="../css/libs/swiper-4.4.6.min.css">
+	<link rel="stylesheet" href="../css/libs/overlayscrollbars-1.6.1.min.css">
+	<link rel="stylesheet" href="../css/libs/pikaday.css">
+
+	<!-- 페이지 css -->
+	<link rel="stylesheet" class="link_font" resource="../css/fonts.css">
+	<link rel="stylesheet" href="../css/fonts_early.css">
+	<link rel="stylesheet" href="../css/app.css">
+
+	<!-- (D) 스크립트(폴리필, 라이브러리)는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+	<!-- 폴리필 스크립트 -->
+	<script src="../js/polyfill/es6-promise.auto-4.2.4.min.js"></script>
+
+	<!-- 라이브러리 스크립트 -->
+	<!-- <script src="../js/libs/webfontloader-1.6.28.min.js"></script> -->
+	<script src="../js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/libs/axios-0.18.0.min.js"></script>
+	<script src="../js/libs/underscore-1.9.1.min.js"></script>
+	<script src="../js/libs/load-image.all-2.20.1.min.js"></script>
+	<script src="../js/libs/tweenmax-2.0.2.min.js"></script>
+	<script src="../js/libs/swiper-4.4.6.min.js"></script>
+	<script src="../js/libs/sortable-1.6.0.min.js"></script>
+	<script src="../js/libs/moment-2.23.0.min.js"></script>
+	<!-- <script src="../js/libs/cleave-1.4.7.min.js"></script> -->
+	<!-- <script src="../js/libs/cleave-1.4.7.phone.kr.js"></script> -->
+	<!-- <script src="../js/libs/overlayscrollbars-1.6.1.min.js"></script> -->
+	<!-- <script src="../js/libs/pikaday-1.8.0.min.js"></script> -->
+	<!-- <script src="../js/libs/handlebars-4.0.12.min.js"></script> -->
+	<!-- <script src="../js/libs/template7-1.4.0.min.js"></script> -->
+	<!-- <script src="../js/libs/vue-2.5.21.min.js"></script> -->
+	<!-- <script src="../js/libs/autoNumeric-4.1.0.min.js"></script> -->
+	<!-- <script src="../js/libs/chart-2.7.3.min.js"></script> -->
+	<!-- <script src="../js/libs/ckeditor.full-4.10.0/ckeditor.js"></script> -->
+
+	<!-- 공통 선언 스크립트 -->
+	<script src="../js/app_common.js"></script>
+
+	<!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .mm_page-content 하단에 넣어주세요. -->
+</head>
+<body>
+	<div id="mm_app" class="mm_app">
+		<!-- 스킵 -->
+		<nav class="mm_skip">
+			<ul>
+				<li><a href="#mm_body" data-href="anchor">본문바로가기</a></li>
+			</ul>
+		</nav>
+		<!-- 스킵 -->
+
+		<!-- 화면 -->
+		<div class="mm_view">
+			<!-- 헤더 -->
+			<div class="mm_header">
+				<h1><a href="/" data-href="{ '_type': 'home' }"><i class="image_logo"></i><span class="mm_ir-blind">엔터식스몰</span></a></h1>
+				<button type="button" class="btn_menu" title="펼쳐보기" onclick="mm.sidebar.open();">
+					<i class="mco_menu"></i>
+					<span class="mm_ir-blind">카테고리</span>
+				</button>
+				<!-- <div class="mm_box-rside">
+					<a href="#" data-href="{ '_type': 'link' }"><i class="mco_cart"></i><span class="text_badge">2</span><span class="mm_ir-blind">장바구니</span></a>
+					<a href="#" data-href="{ '_type': 'link' }"><i class="mco_mypage"></i><span class="mm_ir-blind">마이페이지</span></a>
+					<a href="_popup_search.html" data-href="{ '_type': 'popup' }"><i class="mco_search"></i><span class="mm_ir-blind">검색</span></a>
+				</div> -->
+				<div class="mm_header-search">
+					<a href="_popup_search.html" class="btn_search" data-href="{ '_type': 'popup' }"><i class="mco_search"></i><span class="mm_ir-blind">검색</span></a>
+					<a href="#" class="btn_keyword" data-href="{ '_type': 'link' }"><span>로엠/테이트 오늘만! 득템하러 바로가기</span></a>
+				</div>
+			</div>
+			<!--// 헤더 -->
+
+			<!-- 내용 -->
+			<div id="mm_body" class="mm_page">
+				<div class="mm_scroller">
+					<div class="mm_box-flexcolumn">
+						<!-- 본문 -->
+						<div class="mm_page-content">
+							<!-- (D) 실제 내용을 추가하는 부분입니다. -->
+
+							<!-- (D) 메인페이지는 html 요소에 '__header-extend' 클래스를 추가합니다. -->
+							<div class="mm_gnb">
+								<div class="mm_gnb-inner">
+									<!-- (D) 현재페이지의 a 요소에 "__on" 클래스와 "선택됨" 타이틀을 추가합니다. -->
+									<div class="mm_swiper" data-swiper="{ '_type': 'swiper_free' }">
+										<div class="mm_swiper-inner">
+											<ul class="swiper-wrapper">
+												<li class="swiper-slide"><a href="#" class="__on" title="선택됨"><span>홈</span></a></li>
+												<li class="swiper-slide"><a href="#"><span>베스트</span></a></li>
+												<!-- <li class="swiper-slide"><a href="#"><span>롱패딩 DAY</span></a></li> -->
+												<li class="swiper-slide"><a href="#"><span>스윗딜</span></a></li>
+												<li class="swiper-slide"><a href="#"><span>엔터식스 NOW</span></a></li>
+												<li class="swiper-slide"><a href="#"><span>이벤트/혜택</span></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 메인스와이퍼 -->
+							<div class="mm_box-full m-main">
+								<div class="mm_swiper" data-swiper="{ '_type': 'swiper_page' }">
+									<div class="mm_swiper-inner">
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide">
+												<!-- 기본메인 -->
+												<iframe class="mm_preload m-main-slideframe" data-preload="{ '_src': '_iframe_mainHome.html' }"></iframe>
+											</li>
+											<li class="swiper-slide">
+												<!-- 베스트 -->
+												<iframe class="mm_preload m-main-slideframe" data-preload="{ '_src': '_iframe_mainBest.html' }"></iframe>
+											</li>
+											<li class="swiper-slide">
+												<!-- 스윗딜 -->
+												<iframe class="mm_preload m-main-slideframe" data-preload="{ '_src': '_iframe_mainSweet.html' }"></iframe>
+											</li>
+											<li class="swiper-slide">
+												<!-- 엔터식스나우 -->
+												<iframe class="mm_preload m-main-slideframe" data-preload="{ '_src': '_iframe_mainEnterNow.html' }"></iframe>
+											</li>
+											<li class="swiper-slide">
+												<!-- 이벤트/혜택 -->
+												<iframe class="mm_preload m-main-slideframe" data-preload="{ '_src': '_iframe_mainEventBenefit.html' }"></iframe>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!--// 메인스와이퍼 -->
+
+							<!-- 현재 페이지 스크립트 -->
+							<script src="../js/app_page-main.js"></script>
+							<script>
+								$(function() {
+
+									var $appPopup = $('.m-app');
+
+									// 앱 최초실행
+									if (mm.is.mobile('app_first') && !mm.cookie.get('IS_APP_FIRST_HIDE')) {
+										$appPopup.addClass('__on')
+										.find('.mm_btn').on('click', function() {
+
+											$(this).closest('.mm_scroller').next().addClass('__on')
+											.end().remove();
+
+										}).end()
+										.find('.m-app-guide').on('click', function() {
+
+											mm.cookie.set('IS_APP_FIRST_HIDE', true);
+											$('.m-app').remove();// 앱전용화면 닫기
+											mainPopupBanner();// 메인 팝업배너 노출
+
+										});
+									}
+									else {
+										$appPopup.find('.mm_btn').off('click').end()
+										.find('.m-app-guide').off('click').end()
+										.remove();
+									}
+
+									// 메인 팝업배너
+									function mainPopupBanner() {
+
+										var $mainPopup = $('.m-main-popup');
+										var _isCookieHide = mm.cookie.get('IS_MAIN_POPUP_HIDE');
+
+										if ($('.m-app')[0]) return;// 앱 처음접속 팝업이 있음
+
+										if (!_isCookieHide) $mainPopup.addClass('__on');// 팝업열기
+										else return $mainPopup.remove();
+
+										mm.swiper.update($mainPopup);
+
+										// 팝업닫기
+										$mainPopup.on('click', function(__e) {
+
+											if ($(__e.target).closest('.btn_close-today')[0]) mm.cookie.set('IS_MAIN_POPUP_HIDE', true, 1, true);// 1일 자정 리셋
+											$mainPopup.off('click').remove();
+
+										});
+
+									}
+									mainPopupBanner();
+									
+									// 서브페이지 이동 (subpage가 있으면 m-main-slideframe 요소 제거)
+									// var subpage = '/enter6_shop/mobile/html/productDetail.html';
+									var subpage = '';
+									if (subpage) {
+										var sessions = mm.history.getSession();
+										sessions.history.directSubPageStep = 1;// 서브페이지로 다이렉트 접속 시 메인에서 서브페이지 노출여부
+										top.mm.storage.set('session', 'history', sessions.histories);
+										// mm.link(subpage);
+										mm.link(subpage, { '_type': 'popup' });// 팝업타입 분기 필요
+									}
+
+								});
+							</script>
+						</div>
+						<!--// 본문 -->
+					</div>
+				</div>
+				
+				<!-- 앱전용화면 -->
+				<div class="m-app">
+					<!-- 접근권한 -->
+					<div class="mm_scroller m-app-access">
+						<i class="image_app"><img src="../images/common/app_access.jpg" alt="접근권한"></i>
+						<button type="button" class="mm_btn __btn_lg_primary__"><span>확인완료</span></button>
+					</div>
+					<!--// 접근권한 -->
+
+					<!-- 쇼핑알림설정 -->
+					<div class="mm_scroller m-app-shopping">
+						<i class="image_app"><img src="../images/common/app_shopping.jpg" alt="쇼핑알림설정"></i>
+						<div class="mm_btngroup">
+							<button type="button" class="mm_btn __btn_lg__"><span>다음에</span></button>
+							<button type="button" class="mm_btn __btn_lg_primary__"><span>알림ON</span></button>
+						</div>
+					</div>
+					<!--// 쇼핑알림설정 -->
+
+					<!-- 이용가이드 -->
+					<div class="m-app-guide" tabindex="0">
+						<i class="image_app"><img src="../images/common/app_guide.png" alt="이용가이드"></i>
+					</div>
+					<!--// 이용가이드 -->
+				</div>
+				<!--// 앱전용화면 -->
+
+				<!-- 메인팝업 -->
+				<div class="m-main-popup">
+					<div class="m-main-popup-dim"></div>
+					<div class="m-main-popup-item">
+						<div class="mm_swiper">
+							<div class="mm_swiper-inner">
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide">
+										<a href="_popup_promotion.html" data-href="{ '_type': 'popup' }">
+											<i class="mm_preload mm_bg-cover image_banner" data-preload="{ '_src': '../images/_sample/main_popup1.jpg' }"></i>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="_popup_eventBenefitDetail.html" data-href="{ '_type': 'popup' }">
+											<i class="mm_preload mm_bg-cover image_banner" data-preload="{ '_src': '../images/_sample/main_popup1.jpg' }"></i>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="_popup_eventBenefitDetail.html" data-href="{ '_type': 'popup' }">
+											<i class="mm_preload mm_bg-cover image_banner" data-preload="{ '_src': '../images/_sample/main_popup1.jpg' }"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<div class="m--items-close">
+							<button type="button" class="btn_close-today"><span>오늘하루 그만보기</span></button>
+							<button type="button" class="btn_close"><span>닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!--// 메인팝업 -->
+			</div>
+			<!--// 내용 -->
+
+			<!-- 툴바 -->
+			<div class="mm_toolbar">
+				<ul class="mm_box-flex __flex_equal__">
+					<li>
+						<button type="button" title="펼쳐보기" onclick="mm.sidebar.open();">
+							<i class="mco_menu"></i>
+							<span>카테고리</span>
+						</button>
+					</li>
+					<li>
+						<a href="#" data-href="{ '_type': 'link' }">
+							<i class="mco_mypage"></i>
+							<span>마이페이지</span>
+						</a>
+					</li>
+					<li>
+						<a href="/" data-href="{ '_type': 'home' }">
+							<i class="mco_home"></i>
+							<span>홈</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-href="{ '_type': 'link' }">
+							<i class="mco_cart"><span class="text_badge">2</span></i>
+							<span>장바구니</span>
+						</a>
+					</li>
+					<li>
+						<a href="_popup_recent.html" data-href="{ '_type': 'popup' }">
+							<i class="mco_recent"></i>
+							<span>최근본상품</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--// 툴바 -->
+		</div>
+		<!--// 화면 -->
+
+		<!-- 사이드바 -->
+		<!--
+			(D) 사이드바 상태 값
+			__side: 사이드바 열림 (html에 추가)
+			회원 등급에 따라 mm_sidebar 요소에 __sidebar_vip__, __sidebar_gold__, __sidebar_silver__, __sidebar_family__ 클래스를 추가합니다.
+		-->
+		<div id="mm_sidebar" class="mm_sidebar">
+			<button type="button" class="btn_sidebar-area" onclick="mm.sidebar.close();"><span class="mm_ir-blind">카테고리 숨기기</span></button>
+			<div class="mm_sidebar-inner">
+				<div class="mm_box-flexcolumn">
+					<div class="mm_sidebar-head">
+						<ul>
+							<li><a href="_popup_login.html" data-href="{ '_type': 'popup' }"><span>로그인</span></a></li>
+							<li><a href="_popup_joinVerify.html" data-href="{ '_type': 'popup' }"><span>회원가입</span></a></li>
+						</ul>
+						<button type="button" class="btn_sidebar-close" onclick="mm.sidebar.close();"><b><i class="mco_close"></i><span class="mm_ir-blind">카테고리 숨기기</span></b></button>
+					</div>
+					<div class="mm_flex-equal">
+						<div class="mm_scroller mm_box-full">
+							<div class="mm_sidebar-mymenu">
+								<ul class="mm_box-flex __flex_equal__">
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_mypage"></i><span>마이페이지</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_order"></i><span>주문/배송</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_cart"></i><span>장바구니</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_like"></i><span>MY 찜</span></a></li>
+								</ul>
+							</div>
+							<hr class="mm_line">
+							<section class="mm_sidebar-category">
+								<h5 class="mm_heading"><span>카테고리</span></h5>
+								<ul>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_woman__"></i><span>여성패션</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_man__"></i><span>남성패션</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_unisex__"></i><span>유니섹스/캐주얼</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_underware__"></i><span>언더웨어</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_kids__"></i><span>키즈/베이비</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_leisure__"></i><span>스포츠/레저</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_style__"></i><span>잡화/명품/뷰티</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_life__"></i><span>라이프스타일</span></a></li>
+								</ul>
+							</section>
+							<hr class="mm_line">
+							<section class="mm_sidebar-brand">
+								<h5 class="mm_heading"><span>브랜드</span></h5>
+								<div class="mm_sidebar-brand-list">
+									<!-- (D) 현재페이지의 a 요소에 "__on" 클래스와 "선택됨" 타이틀을 추가합니다. -->
+									<div class="mm_swiper" data-swiper="{ '_type': 'swiper_free', 'configs': { 'spaceBetween': 5 } }">
+										<div class="mm_swiper-inner">
+											<ul class="swiper-wrapper">
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand111.jpg', '_isErrorImage': false }"><span>프리로드에러샘플</span></i></a></li>
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_bg-cover mm_image-brand"><span>이미지없음샘플</span></i></a></li>
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand4.jpg', '_isErrorImage': false }"><span>휠라</span></i></a></li>
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand3.jpg', '_isErrorImage': false }"><span>라코스테</span></i></a></li>
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand5.jpg', '_isErrorImage': false }"><span>아디다스</span></i></a></li>
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand6.jpg', '_isErrorImage': false }"><span>디스커버리</span></i></a></li>
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand7.jpg', '_isErrorImage': false }"><span>푸마</span></i></a></li>
+												<li class="swiper-slide"><a href="brandShop.html" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand8.jpg', '_isErrorImage': false }"><span>나이키</span></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<a href="#" data-href="{ '_type': 'link' }"><span>브랜드 찾기</span><i class="mco_search"></i></a>
+							</section>
+							<hr class="mm_line">
+							<div class="mm_sidebar-prodmenu">
+								<ul class="mm_box-flex __flex_equal__">
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_best"></i><span>베스트</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_deal"></i><span>스윗딜</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_now"></i><span>엔터식스 NOW</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="mm_sidebar-foot">
+						<ul class="mm_box-flex __flex_equal__">
+							<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_cs"></i><span>고객센터</span></a></li>
+							<li><a href="_popup_setup.html" data-href="{ '_type': 'popup' }"><i class="mco_setup"></i><span>설정</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 사이드바 -->
+
+		<!-- 공통 페이지 스크립트 -->
+		<script src="../js/app_page-common.js"></script>
+	</div>
+</body>
+</html>

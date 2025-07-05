@@ -1,0 +1,580 @@
+@charset 'utf-8';
+
+/**
+** 모달
+**/
+
+/// 모달 영역
+.mm_modal {
+	overflow: hidden;
+	position: absolute;// mobile: absolute, pc: fixed
+	z-index: $zIndex_modal;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	// 모달 열림
+	.__modal & {
+		@include opacity(1, auto);
+
+		.mm_modal-dim {
+			@include opacity(1);
+		}
+	}
+
+	&-dim {
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0.8);
+		@include opacity(0);
+		@include transition(opacity $time_fast);
+	}
+
+	&-items {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+///-- 모달 영역
+
+/// 모달 요소
+.mm_modal-item {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@include opacity(0, none);
+	@include transform(scale(1.2));
+	@include transition(opacity $time_fast, transform $time_fast);
+
+	// 현재창
+	&.__modal-on {
+		// z-index: 1;
+		@include opacity(1, auto);
+		@include transform(scale(1));
+		@include transition(transform $time_fast);
+	}
+
+	// 노출모션
+	// &.__modal-motion-up {
+	// 	@include transform(translateY(10%));
+	//
+	// 	&.__modal-on {
+	// 		@include transform(translateY(0));
+	// 	}
+	// }
+	// &.__modal-motion-down {
+	// 	@include transform(translateY(-10%));
+	//
+	// 	&.__modal-on {
+	// 		@include transform(translateY(0));
+	// 	}
+	// }
+	// &.__modal-motion-left {
+	// 	@include transform(translateX(10%));
+	//
+	// 	&.__modal-on {
+	// 		@include transform(translateX(0));
+	// 	}
+	// }
+	// &.__modal-motion-right {
+	// 	@include transform(translateX(-10%));
+	//
+	// 	&.__modal-on {
+	// 		@include transform(translateX(0));
+	// 	}
+	// }
+
+	.btn_modal-area {
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0);
+		cursor: default;
+	}
+
+	&-inner {
+		@include flex-container(column);
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 300px;
+		max-height: 90%;
+		border-radius: 6px;
+		background: #fff;
+		@include transform(translate(-50%, -50%));
+	}
+
+	iframe {
+		@include prefix(flex, 1, webkit ms);
+		position: relative;
+		min-width: 100%;
+		height: 100%;
+	}
+}
+///-- 모달 요소
+
+/// 모달 닫기
+.btn_modal-close {
+	position: absolute;
+	top: 15px;
+	right: -3px;
+	width: 30px;
+	height: 30px;
+	color: #202020;
+	font-size: 15px;
+	line-height: 30px;
+	text-align: center;
+
+	.mm_modal & {
+		// right: 0;
+	}
+}
+///-- 모달 닫기
+
+/// 모달 페이지
+html[class*="_modal_"] {
+	min-width: 0;
+
+	.mm_header {
+		right: 14px;
+		left: 14px;
+		height: 48px;
+		border-bottom: 1px solid #000;
+		@include prefix(box-shadow, none, webkit);
+
+		h1 {
+			padding-top: 20px;
+			text-align: left;
+
+			span {
+				margin-left: -1px;
+				line-height: 1;
+			}
+		}
+	}
+
+	.mm_page {
+		> .mm_scroller {
+			padding: 48px 0 0;
+		}
+	}
+
+	.mm_page-content {
+		padding: 0 14px 20px;
+		// border-top: 0;
+	}
+}
+
+// 오늘하루그만보기
+.m-modal-today {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 14px;
+	background: #f2f2f2;
+
+	.mm_form-check {
+		position: relative;
+
+		&:after {
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			right: -10px;
+			bottom: -10px;
+			content: "";
+		}
+	}
+}
+///-- 모달 페이지
+
+/// 상품 할인상세내역
+.m-modal-product-discount {
+	padding-bottom: 27px;
+	
+	.text_price {
+		display: inline-block;
+		vertical-align: 0;
+		font-weight: 400;
+		
+		&:after {
+			vertical-align: 0;
+			font-size: 16px;
+			content: "원";
+		}
+	}
+	
+	dl {
+		padding: 0 19px;
+		font-size: 16px;
+		
+		dt {
+			float: left;
+			font-weight: 300;
+		}
+		
+		dd {
+			float: right;
+		}
+	}
+
+	> ul {
+		padding: 13px 0 15px;
+		
+		dl {
+			line-height: 26px;
+		}
+	}
+	
+	> dl {
+		height: 48px;
+		border-top: 1px solid #cfcfcf;
+		background: #f7f7f7;
+		line-height: 45px;
+		
+		dd {
+			font-size: 20px;
+		}
+	}
+
+	.mm_attention {
+		margin-top: 16px;
+		color: #4f4f4f;
+		font-weight: 300;
+		
+		li {
+			&:nth-child(n+2) {
+				margin-top: 5px;
+			}
+		}
+	}
+}
+///-- 상품 할인상세내역
+
+/// 네이버 전용쿠폰 모달
+.m-modal-coupon-naver {
+	padding-bottom: 60px;
+	text-align: center;
+
+	h4 {
+		padding: 28px 0 20px;
+		font-size: 16px;
+
+		.logo_naver {
+			margin: 2px 6px -2px 0;
+
+			img {
+				width: auto;
+				height: 14px;
+			}
+		}
+	}
+
+	.image_coupon {
+		img {
+			width: auto;
+			height: 67px;
+		}
+	}
+
+	.text_attention {
+		margin-top: 14px;
+		font-weight: 300;
+		font-size: 13px;
+	}
+
+	.btn_download {
+		margin-top: 25px;
+
+		i {
+			margin-left: 8px;
+			font-size: 12px;
+		}
+	}
+}
+///-- 네이버 전용쿠폰 모달
+
+/// sns공유
+.m-modal-share {
+	padding: 50px 0;
+	
+	ul {
+		font-size: 0;
+		text-align: center;
+		
+		li {
+			display: inline-block;
+			margin: 0 7px;
+		}
+	}
+
+	[class^="btn_share"] {
+		width: 56px;
+		height: 56px;
+		border-radius: 100%;
+		text-align: center;
+		line-height: 58px;
+		font-weight: 500;
+
+		$sns: ('-kakao', #fded36, #352e00, 32px), ('-line', #52b238, #fff, 31px), ('-url', #898a8c, #fff, 18px);
+		@each $channel, $bgColor, $color, $fontSize in $sns {
+			&[class*="#{$channel}"] {
+				background: $bgColor;
+				color: $color;
+				font-size: $fontSize;
+
+				@if $channel == '-url' {
+					line-height: 56px;
+
+					.mco_sns-url:before {
+						font-family: $fontFamily_base;
+					}
+				}
+			}
+		}
+	}
+}
+///-- sns공유
+
+/// 장바구니 옵션변경
+.m-modal-cartoption {
+	/// 옵션 1, 2 항목
+	&-item {
+		padding-top: 16px;
+
+		&:nth-of-type(2) {
+			padding-top: 11px;
+
+			.mm_dropdown {
+				.mm_dropdown-item {
+					top: 111px
+				}
+			}
+		}
+
+		.mm_dropdown {
+			position: static;
+
+			&.__dropdown-on {
+				.mm_dropdown-item {
+					visibility: visible;
+				}
+			}
+
+			.btn_dropdown {
+				padding: 0 35px 0 11px;
+				height: 42px;
+				border: 1px solid #cfcfcf;
+				color: #999;
+				line-height: 40px;
+				text-align: left;
+
+				&.__option-select {
+					border-color: $color_primary_base;
+					color: #000;
+				}
+
+				.text_option {
+					+ span {
+						display: none;
+					}
+				}
+
+				.mco_dropdown {
+					position: absolute;
+					right: 12px;
+					color: #666;
+					font-size: 20px;
+				}
+			}
+
+			.mm_dropdown-item {
+				visibility: hidden;
+				position: absolute;
+				z-index: 1;
+				top: 37px;
+				left: 0;
+				bottom: 62px;
+				right: 0;
+				padding:  0 14px 17px;
+				background: #fff;
+
+				&-inner {
+					@include flex-container(column);
+					height: 100%;
+				}
+
+				.mm_syncer-option-search {
+					margin-top: 8px;
+				}
+			}
+		}
+	}
+	///-- 옵션 1, 2 항목
+
+	/// 옵션 리스트
+	.m--item-list {
+		height: auto;
+		margin-top: 7px;
+		border : 1px solid #cfcfcf;
+
+		ul {
+			margin-top: -1px;
+
+			li {
+				border-top: 1px solid #cfcfcf;
+
+				&.__none-soldout,
+				&.__none-word,
+				&.__none-group {
+					display: none;
+				}
+			}
+		}
+
+		.mm_text-none {
+			padding: 65px 0;
+		}
+
+		a {
+			display: block;
+
+			&.__soldout {
+				color: #a3a3a3;
+				cursor: default;
+			}
+		}
+
+		figure {
+			@include flex-container();
+			padding: 5px 9px 12px 5px;
+
+			figcaption {
+				@include prefix(flex, 1, webkit ms);
+				position: relative;
+				padding-right: 95px;
+
+				.mm_box-rside {
+					position: absolute;
+					top: 3px;
+					right: 0;
+					text-align: right;
+
+					span:not(.text_soldout) {
+						display: block;
+						margin-top: 4px;
+						font-weight: 300;
+						font-size: 12px;
+					}
+				}
+
+				.text_option {
+					display: block;
+					margin-top: 2px;
+					min-height: 34px;
+					font-weight: 300;
+					font-size: 14px;
+					line-height: 17px;
+				}
+			}
+		}
+
+		div.mm_box-flex {
+			padding: 12px 9px 10px 9px;
+
+			.text_option {
+				@include prefix(flex, 1, webkit ms);
+				font-size: 15px;
+			}
+		}
+
+		.image_product {
+			position: relative;
+			margin-right: 6px;
+			width: 44px;
+			height: 44px;
+			border: 1px solid #cfcfcf;
+		}
+
+		.text_price {
+			display: block;
+			width: 95px;
+			font-weight: 500;
+			font-size: 18px;
+			font-family: $fontFamily_latin;
+			text-align: right;
+
+			&:after {
+				vertical-align: 1px;
+				font-weight: 300;
+				font-size: 14px;
+				font-family: $fontFamily_base;
+				content: "원"
+			}
+		}
+
+		.text_soldout {
+			font-size: 14px;
+		}
+	}
+	///-- 옵션 리스트
+
+	/// 선택된 옵션
+	.m-modal-cartoption-selected {
+		position: relative;
+		margin: 17px 0;
+		padding: 10px 9px;
+		height: 91px;
+		border: 1px solid #cfcfcf;
+
+		.m--selected-option {
+			+ .text_option-none {
+				display: none;
+			}
+
+			.text_selected {
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 17px;
+			}
+
+			.mm_stepper {
+				margin-top: 22px;
+			}
+
+			.btn_remove {
+				position: absolute;
+				bottom: 10px;
+				right: 9px;
+				width: 32px;
+				height: 30px;
+				border: 1px solid #cfcfcf;
+				color: #999;
+				font-size: 17px;
+				line-height: 28px;
+			}
+		}
+
+		.text_option-none {
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 66px;
+			text-align: center;
+		}
+	}
+	///-- 선택된 옵션
+
+	.mm_btngroup {
+		button:nth-of-type(n+2) {
+			margin-left: 5px;
+		}
+	}
+}
+///-- 장바구니 옵션변경

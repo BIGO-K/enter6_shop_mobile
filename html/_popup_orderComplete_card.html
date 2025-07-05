@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko" class="__mm_popup__">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 소셜태그 -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<!--// 소셜태그 -->
+
+	<title>(팝업) 주문완료 - 엔터식스 온라인몰</title>
+
+	<!-- 라이브러리 css -->
+	<link rel="stylesheet" href="../css/libs/fontello-custom.css">
+	<link rel="stylesheet" href="../css/libs/swiper-4.4.6.min.css">
+	<link rel="stylesheet" href="../css/libs/overlayscrollbars-1.6.1.min.css">
+	<link rel="stylesheet" href="../css/libs/pikaday.css">
+
+	<!-- 페이지 css -->
+	<link rel="stylesheet" class="link_font" resource="../css/fonts.css">
+	<link rel="stylesheet" href="../css/fonts_early.css">
+	<link rel="stylesheet" href="../css/app.css">
+
+	<!-- (D) 스크립트(폴리필, 라이브러리)는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+	<!-- 폴리필 스크립트 -->
+	<script src="../js/polyfill/es6-promise.auto-4.2.4.min.js"></script>
+
+	<!-- 라이브러리 스크립트 -->
+	<!-- <script src="../js/libs/webfontloader-1.6.28.min.js"></script> -->
+	<script src="../js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/libs/axios-0.18.0.min.js"></script>
+	<script src="../js/libs/underscore-1.9.1.min.js"></script>
+	<script src="../js/libs/load-image.all-2.20.1.min.js"></script>
+	<script src="../js/libs/tweenmax-2.0.2.min.js"></script>
+	<script src="../js/libs/swiper-4.4.6.min.js"></script>
+	<script src="../js/libs/sortable-1.6.0.min.js"></script>
+	<script src="../js/libs/moment-2.23.0.min.js"></script>
+	<!-- <script src="../js/libs/cleave-1.4.7.min.js"></script> -->
+	<!-- <script src="../js/libs/cleave-1.4.7.phone.kr.js"></script> -->
+	<!-- <script src="../js/libs/overlayscrollbars-1.6.1.min.js"></script> -->
+	<!-- <script src="../js/libs/pikaday-1.8.0.min.js"></script> -->
+	<!-- <script src="../js/libs/handlebars-4.0.12.min.js"></script> -->
+	<!-- <script src="../js/libs/template7-1.4.0.min.js"></script> -->
+	<!-- <script src="../js/libs/vue-2.5.21.min.js"></script> -->
+	<!-- <script src="../js/libs/autoNumeric-4.1.0.min.js"></script> -->
+	<!-- <script src="../js/libs/chart-2.7.3.min.js"></script> -->
+	<!-- <script src="../js/libs/ckeditor.full-4.10.0/ckeditor.js"></script> -->
+
+	<!-- 공통 선언 스크립트 -->
+	<script src="../js/app_common.js"></script>
+
+	<!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .mm_page-content 하단에 넣어주세요. -->
+</head>
+<body>
+	<div id="mm_app" class="mm_app">
+		<!-- 스킵 -->
+		<nav class="mm_skip">
+			<ul>
+				<li><a href="#mm_body" data-href="anchor">본문바로가기</a></li>
+			</ul>
+		</nav>
+		<!-- 스킵 -->
+
+		<!-- 화면 -->
+		<div class="mm_view">
+			<!-- 헤더 -->
+			<div class="mm_header">
+				<h1><span>주문완료</span></h1>
+				<div class="mm_box-lside">
+					<a href="#" data-href="{ '_type': 'back' }"><i class="mco_back"></i><span class="mm_ir-blind">뒤로가기</span></a>
+				</div>
+				<button type="button" class="btn_popup-close" onclick="mm.popup.close();"><i class="mco_popup-close"></i><span class="mm_ir-blind">팝업 닫기</span></button>
+			</div>
+			<!--// 헤더 -->
+
+			<!-- 내용 -->
+			<div id="mm_body" class="mm_page">
+				<div class="mm_scroller">
+					<div class="mm_box-flexcolumn">
+						<!-- 본문 -->
+						<div class="mm_page-content">
+							<!-- (D) 실제 내용을 추가하는 부분입니다. -->
+
+							<!-- (D) iframe 팝업은 html 요소에 '__mm_popup__' 클래스를 추가합니다. -->
+							<div class="m-ordercomplete-head">
+								<h3><span>주문이 정상적으로 처리되었습니다</span></h3>
+								<p>엔터식스를 이용해 주셔서 감사합니다</p>
+								<div class="mm_btngroup">
+									<!-- <a href="#" class="mm_btn __btn_primary__" data-href="{ '_type': 'link', '_isPopupClose': true }"><span>나의 쇼핑내역 바로가기</span></a> -->
+									<!-- <a href="/" class="mm_btn __btn_line__" data-href="{ '_type': 'home' }"><span>쇼핑 계속하기</span></a> -->
+									<a href="/" class="mm_btn __btn_primary__" data-href="{ '_type': 'home' }"><span>쇼핑 계속하기</span></a>
+								</div>
+							</div>
+
+							<hr class="mm_line">
+
+							<!-- 상품정보 -->
+							<section class="mm_dropdown __dropdown-on m-order-product" data-dropdown="{ '_isMotion': false }">
+								<h3 class="btn_dropdown" tabindex="0" title="펼쳐보기"><span>상품정보</span><strong class="mm_text-primary">3개</strong><i class="mco_dropdown __mco_lg__"></i></h3>
+								<div class="mm_dropdown-item">
+									<div class="mm_dropdown-item-inner">
+										<div class="mm_product-list __list-wide m-cart-list">
+											<ul>
+												<li>
+													<div class="mm_product-item">
+														<a href="productDetail.html" data-href="{ '_type': 'popup' }">
+															<figure>
+																<i class="mm_preload mm_bg-contain image_product" data-preload="{ '_src': '../images/_sample/product_x240_1.jpg' }"></i>
+																<figcaption>
+																	<span class="text_brand">후아유</span>
+																	<span class="text_product">[공용] 테이핑 그래픽 라운드 맨투맨_노기모 WHMW92214U</span>
+																	<span class="text_option">블랙 M/1개</span>
+																	<span class="text_price"><strong>39,200</strong></span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+												</li>
+												<li>
+													<div class="mm_product-item">
+														<a href="productDetail.html" data-href="{ '_type': 'popup' }">
+															<figure>
+																<i class="mm_preload mm_bg-contain image_product" data-preload="{ '_src': '../images/_sample/product_x240_2.jpg' }"></i>
+																<figcaption>
+																	<span class="text_brand">로엠</span>
+																	<span class="text_product">(앵커)체크 프릴 블라우스 RMBL92301A</span>
+																	<span class="text_option">아이보리 85/1개</span>
+																	<span class="text_price"><strong>45,000</strong></span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+													<dl>
+														<dt><span>판매자</span></dt>
+														<dd>동탄_리복</dd>
+														<dt><span>배송비</span></dt>
+														<dd><strong class="mm_text-primary text_price">2,500</strong></dd>
+													</dl>
+												</li>
+												<li>
+													<div class="mm_product-item">
+														<a href="productDetail.html" data-href="{ '_type': 'popup' }">
+															<figure>
+																<i class="mm_preload mm_bg-contain image_product" data-preload="{ '_src': '../images/_sample/product_x240_3.jpg' }"></i>
+																<figcaption>
+																	<span class="text_brand">지오다노</span>
+																	<span class="text_product">남여 코튼 린넨 스트레치 기능성 셔츠 349510</span>
+																	<span class="text_option">코튼 린넨 스트레치 기능성 셔츠 04 옐로우 브라운 XL/1개</span>
+																	<span class="text_price"><strong>12,800</strong></span>
+																</figcaption>
+															</figure>
+														</a>
+													</div>
+													<dl>
+														<dt><span>판매자</span></dt>
+														<dd>강변_리복</dd>
+														<dt><span>배송비</span></dt>
+														<dd><strong class="mm_text-primary">무료배송</strong></dd>
+													</dl>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</section>
+							<hr class="mm_line">
+							<!--// 상품정보 -->
+
+							<!-- 결제정보 -->
+							<section class="mm_dropdown __dropdown-on m-order-calc" data-dropdown="{ '_isMotion': false }">
+								<h3 class="btn_dropdown" tabindex="0" title="펼쳐보기"><span>결제정보</span><i class="mco_dropdown __mco_lg__"></i></h3>
+								<div class="mm_dropdown-item">
+									<div class="mm_dropdown-item-inner">
+										<div class="m--calc-info">
+											<dl>
+												<dt><span>주문번호</span></dt>
+												<dd>20190427-00000001 <strong class="mm_text-primary">(입금대기)</strong></dd>
+											</dl>
+											<dl>
+												<dt><span>주문일시</span></dt>
+												<dd>2019.04.27 17:55:43</dd>
+											</dl>
+											<dl>
+												<dt><span>주문자 정보</span></dt>
+												<dd>
+													김가나<br>
+													010-1111-2222<br>
+													abc123@enter6.co.kr
+												</dd>
+											</dl>
+											<dl>
+												<dt><span>배송지 정보</span></dt>
+												<dd>
+													이다라<br>
+													010-1111-2222<br>
+													[13488]<br>
+													경기도 성남시 판교로 242<br>
+													판교디지털센터 C동 401호
+												</dd>
+											</dl>
+											<dl>
+												<dt><span>배송 메세지</span></dt>
+												<dd>부재 시 경비실에 맡겨주세요</dd>
+											</dl>
+										</div>
+										<dl>
+											<dt>
+												<dl class="m--calc-capsule">
+													<dt><span>총 상품금액(상품: 3건)</span></dt>
+													<dd><strong class="text_price">139,120</strong></dd>
+												</dl>
+											</dt>
+											<dd>
+												<dl class="m--calc-capsule">
+													<dt><span>상품금액</span></dt>
+													<dd><strong class="text_price">136,620</strong></dd>
+												</dl>
+												<dl class="m--calc-capsule">
+													<dt><span>배송비</span></dt>
+													<dd><strong class="text_price">+ 2,500</strong></dd>
+												</dl>
+											</dd>
+										</dl>
+
+										<i class="ico_minus"></i>
+										<dl>
+											<dt>
+												<dl class="m--calc-capsule">
+													<dt><span>총 할인금액</span></dt>
+													<dd><strong class="text_price">- 2,000</strong></dd>
+												</dl>
+											</dt>
+											<dd>
+												<dl class="m--calc-capsule">
+													<dt><span>즉시사용 포인트</span></dt>
+													<dd><strong class="text_price">- 20,000</strong></dd>
+												</dl>
+												<dl class="m--calc-capsule">
+													<dt><span>포인트 사용</span></dt>
+													<dd><strong class="text_price">- 1,000</strong></dd>
+												</dl>
+											</dd>
+										</dl>
+
+										<i class="ico_result"></i>
+										<dl class="m--calc-capsule">
+											<dt><span>최종결제금액</span></dt>
+											<dd><strong class="text_price">57,440</strong></dd>
+										</dl>
+
+										<section class="m--calc-payment">
+											<h5><span>신용/체크카드 결제 정보</span></h5>
+											<p>
+												비씨카드(1234-****-****-****) / 일시불<br>
+												승인일시 : 2018.11.28 15:18:30<br>
+												결제금액 : <strong class="text_price">57,440</strong>
+											</p>
+										</section>
+									</div>
+								</div>
+							</section>
+							<!--// 결제정보 -->
+
+							<!-- 현재 페이지 스크립트 -->
+							<!-- <script src="../js/.js"></script> -->
+						</div>
+						<!--// 본문 -->
+					</div>
+					<a href="#mm_app" class="btn_topmost" data-href="{ '_type': 'anchor' }" title="페이지 처음으로 가기"><i class="mco_topmost"></i><span>TOP</span></a>
+				</div>
+			</div>
+			<!--// 내용 -->
+		</div>
+		<!--// 화면 -->
+
+		<!-- 공통 페이지 스크립트 -->
+		<script src="../js/app_page-common.js"></script>
+	</div>
+</body>
+</html>

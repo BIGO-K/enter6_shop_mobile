@@ -1,0 +1,306 @@
+@charset 'utf-8';
+
+/**
+** GNB, LNB, 카테고리메뉴, 브레드크럼, 페이지네이션
+**/
+
+/// gnb
+.mm_gnb {
+	height: 41px;
+
+	&-inner {
+		position: fixed;
+		z-index: $zIndex_floating;
+		top: $height_header_extend;
+		right: 0;
+		left: 0;
+		background: #fff;
+		@include prefix(box-shadow, 0 1px 4px 0 rgba(#000, 0.15), webkit);
+		@include transition(transform $time_fast);
+
+		// 스크롤 숨김
+		.__header-hide & {
+			@include transform(translateY(-$height_header_extend));
+		}
+	}
+
+	.mm_swiper-inner {
+		padding: 0 6px;
+	}
+
+	li {
+		display: inline-block;
+		width: auto;
+		height: 41px;
+		font-size: 16px;
+		line-height: 41px;
+		white-space: nowrap;
+
+		a {
+			&.__on {
+				color: $color_primary_base;
+
+				span {
+					&:after {
+						position: absolute;
+						top: 8px;
+						right: 0;
+						width: 6px;
+						height: 6px;
+						border: 2px solid $color_primary_base;
+						border-radius: 100%;
+						content: "";
+					}
+				}
+			}
+
+			span {
+				display: inline-block;
+				position: relative;
+				padding: 0 8px;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+///-- gnb
+
+/// lnb
+.mm_lnb {
+	height: 46px;
+
+	&-inner {
+		position: fixed;
+		z-index: $zIndex_floating;
+		top: $height_header_base;
+		right: 0;
+		left: 0;
+		border-bottom: 1px solid #e1e1e1;
+		background: #f7f7f7;
+		@include transition(transform $time_fast);
+
+		// 스크롤 숨김
+		.__header-hide & {
+			@include transform(translateY(-$height_header_base));
+		}
+	}
+
+	.mm_swiper-inner {
+		overflow: visible;
+		padding: 0;
+	}
+
+	.swiper-slide {
+		background: transparent;
+	}
+
+	li {
+		display: inline-block;
+		width: auto;
+		height: 45px;
+		color: #999;
+		font-size: 14px;
+		line-height: 45px;
+		white-space: nowrap;
+
+		a {
+			position: relative;
+			padding: 0 12px;
+
+			&.__on {
+				color: $color_primary_base;
+
+				&:after {
+					position: absolute;
+					right: 0;
+					bottom: -1px;
+					left: 0;
+					border-top: 2px solid $color_primary_base;
+					content: "";
+				}
+			}
+		}
+	}
+}
+///-- lnb
+
+/// 카테고리메뉴
+.mm_catemenu {
+	//
+}
+///-- 카테고리메뉴
+
+/// 브레드크럼
+.mm_breadcrumb {
+	// position: absolute;
+	// z-index: 1;
+	// top: 28px;
+	//
+	// ol {
+	// 	li {
+	// 		float: left;
+	// 		color: #666;
+	// 		font-size: 0;
+	// 		line-height: 30px;
+	//
+	// 		.mco_home {
+	// 			font-size: 17px;
+	// 		}
+	//
+	// 		.mm_form-select {
+	// 			display: inline-block;
+	// 			width: 100px;
+	// 		}
+	//
+	// 		.mco_next {
+	// 			margin: 0 8px;
+	// 			font-size: 13px;
+	// 		}
+	// 	}
+	// }
+}
+///-- 브레드크럼
+
+/// 페이지네이션
+.mm_pagination {
+	$width_pagination-base: 36px;
+	$height_pagination_base: 30px;
+
+	margin-top: 14px;
+	text-align: center;
+
+	.mm_box-inline {
+		position: relative;
+	}
+
+	li {
+		float: left;
+
+		&:nth-child(n+2) {
+			margin-left: 6px;
+		}
+
+		a {
+			display: block;
+			width: $width_pagination-base;
+			height: $height_pagination_base;
+			color: #999;
+			font-size: 16px;
+			line-height: $height_pagination_base - 2px;
+			text-align: center;
+
+			&.__page-on {
+				color: $color_primary_base;
+				font-weight: 500;
+			}
+		}
+	}
+
+	[class^="btn_control"] {
+
+		position: absolute;
+		top: 0;
+		width: $width_pagination-base;
+		height: $height_pagination_base;
+		border: 1px solid #e8e8e8;
+		color: #666;
+		font-size: 18px;
+		line-height: $height_pagination_base - 2px;
+		text-align: center;
+
+		// 처음
+		&.btn_control-first {
+			left: -50px - 36px;
+			border-right: 0;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+
+		// 이전
+		&.btn_control-prev {
+			left: -50px;
+		}
+
+		// 다음
+		&.btn_control-next {
+			right: -50px;
+		}
+
+		// 마지막
+		&.btn_control-last {
+			right: -50px - 36px;
+			border-left: 0;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+
+		&[disabled] {
+			@include opacity(0.4);
+		}
+	}
+}
+///-- 페이지네이션
+
+/// 페이저 (페이지네이션 심플)
+.mm_pager {
+	$height_pager_base: 20px;
+
+	margin-top: 14px;
+	text-align: center;
+
+	.mm_box-inline {
+		position: relative;
+	}
+
+	&-count {
+		padding: 0 12px;
+		color: #999;
+		font-size: 16px;
+		line-height: $height_pager_base - 2px;
+
+		strong {
+			color: $color_primary_base;
+		}
+	}
+
+	[class^="btn_control"] {
+		position: absolute;
+		top: 0;
+		// padding: 0 6px;
+		width: 20px;
+		height: $height_pager_base;
+		border: 1px solid #e8e8e8;
+		color: #999;
+		font-size: 18px;
+		line-height: $height_pager_base - 2px;
+
+		// 처음
+		&.btn_control-first {
+			left: -20px - 23px;
+			padding-right: 2px;
+		}
+
+		// 이전
+		&.btn_control-prev {
+			left: -20px;
+			padding-right: 2px;
+		}
+
+		// 다음
+		&.btn_control-next {
+			right: -20px;
+			padding-left: 2px;
+		}
+
+		// 마지막
+		&.btn_control-last {
+			right: -20px - 23px;
+			padding-left: 2px;
+		}
+
+		&[disabled] {
+			@include opacity(0.4);
+		}
+	}
+}
+///-- 페이저 (페이지네이션 심플)

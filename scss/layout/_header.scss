@@ -1,0 +1,199 @@
+@charset 'utf-8';
+
+/**
+** 헤더
+**/
+
+/// 헤더영역
+.mm_header {
+	position: absolute;
+	z-index: $zIndex_header;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: $height_header_base;
+	// border-bottom: 1px solid #b9b9b9;
+	background: #fff;
+	@include prefix(box-shadow, 0 1px 4px 0 rgba(#000, 0.15), webkit);
+	@include transition(transform $time_fast);
+
+	// 메인 확장
+	.__header-extend & {
+		height: $height_header_extend;
+		@include prefix(box-shadow, none, webkit);
+	}
+
+	// 스크롤 숨김
+	.__header-hide & {
+		@include prefix(box-shadow, none, webkit);
+		@include transform(translateY(-100%));
+	}
+
+	h1 {
+		text-align: center;
+
+		span {
+			display: block;
+			padding: 0 40px;
+			font-size: 18px;
+			line-height: 44px;
+			@include text-ellipsis(1);
+		}
+
+		a {
+			padding: 0 10px;
+
+			.image_logo {
+				width: 100px;
+				height: $height_header_base;
+				background: url("../images/common/logo.png") no-repeat 50% 12px;
+				background-size: contain;
+			}
+		}
+		
+		.text_prod {
+			padding: 0 135px 0 14px;
+			text-align: left;
+		}
+	}
+
+	.btn_menu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 49px;
+		height: $height_header_base;
+		font-size: 17px;
+		line-height: 44px;
+		text-align: center;
+	}
+	
+	.btn_option {
+		position: absolute;
+		top: 7px;
+		right: 48px;
+		width: 81px;
+		height: 31px;
+		line-height: 31px;
+	}
+
+	.mm_box-lside {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: $height_header_base;
+		padding-left: 7px;
+
+		> * {
+			float: left;
+			position: relative;
+			padding: 0 8px;
+			height: 100%;
+		}
+
+		.mco_back {
+			font-size: 13px;
+			line-height: 45px;
+		}
+
+		.mco_home {
+			padding: 0 1px;
+			font-size: 18px;
+			line-height: 43px;
+		}
+	}
+
+	.mm_box-rside {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: $height_header_base;
+		padding-right: 7px;
+
+		> * {
+			float: left;
+			position: relative;
+			padding: 0 9px;
+			height: 100%;
+		}
+
+		.mco_cart {
+			font-size: 19px;
+			line-height: 48px;
+
+			+ .text_badge {
+				position: absolute;
+				top: 6px;
+				right: 0;
+				margin-right: 9px;
+				padding: 0 4px;
+				min-width: 15px;
+				height: 15px;
+				border-radius: 15px;
+				background: #000;
+				color: #fff;
+				font-weight: 500;
+				font-size: 12px;
+				font-family: $fontFamily_latin;
+				line-height: 16px;
+				text-align: center;
+				@include transform(translateX(50%));
+			}
+		}
+
+		.mco_mypage {
+			font-size: 19px;
+			line-height: 47px;
+		}
+
+		.mco_search {
+			font-size: 19px;
+			line-height: 48px;
+		}
+	}
+
+	// 검색
+	&-search {
+		position: relative;
+		margin: 0 9px;
+		color: #555;
+		background: #f2f2f2;
+
+		.btn_search {
+			display: block;
+			position: relative;
+			z-index: 1;
+			height: 37px;
+			border-bottom: 1px solid $color_primary_base;
+			text-align: right;
+
+			.mco_search {
+				margin-right: 11px;
+				font-size: 18px;
+				line-height: 36px;
+			}
+		}
+
+		.btn_keyword {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			padding: 0 10px;
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 36px;
+
+			&:after {
+				position: absolute;
+				z-index: 3;
+				top: 0;
+				right: 0;
+				width: 36px;
+				height: 36px;
+				content: "";
+			}
+		}
+	}
+}
+///-- 헤더영역

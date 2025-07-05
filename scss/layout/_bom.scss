@@ -1,0 +1,182 @@
+@charset 'utf-8';
+
+/**
+** 브라우저(시스템) 팝업
+**/
+
+/// 팝업 영역
+.mm_bom {
+	overflow: hidden;
+	position: absolute;// mobile: absolute, pc: fixed
+	z-index: $zIndex_bom;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@include opacity(0, none);
+	@include transition(opacity 0s $time_fast);
+
+	// 팝업 열림
+	.__bom & {
+		@include opacity(1, auto);
+		@include transition(opacity 0s);
+
+		.mm_bom-dim {
+			@include opacity(1);
+		}
+	}
+
+	&-dim {
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0.8);
+		@include opacity(0);
+		@include transition(opacity $time_fast);
+	}
+
+	&-items {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+///-- 팝업 영역
+
+/// 팝업 요소
+.mm_bom-item {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@include opacity(0, none);
+	@include transform(scale(1.2));
+	@include transition(opacity $time_fast, transform $time_fast);
+
+	// 현재창
+	&.__bom-on {
+		z-index: 1;
+		@include opacity(1, auto);
+		@include transform(scale(1));
+	}
+
+	&-inner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 296px;
+		text-align: center;
+		@include transform(translate(-50%, -50%));
+
+		> .mm_box {
+			overflow: hidden;
+			border-radius: 6px;
+			background: #fff;
+		}
+	}
+
+	[class^="mco_bom"] {
+		position: absolute;
+		top: -40px;
+		left: 50%;
+		margin-left: -40px;
+		width: 80px;
+		height: 80px;
+		border: 7px solid #fff;
+		border-radius: 100%;
+		background: #e8e8e8;
+		color: #999;
+		text-align: center;
+
+		&.mco_bom-alert {
+			font-size: 30px;
+			line-height: 64px;
+		}
+		
+		&.mco_bom-confirm {
+			font-size: 38px;
+			line-height: 66px;
+		}
+		
+		&.mco_bom-prompt {
+			font-size: 31px;
+			line-height: 64px;
+		}
+	}
+
+	&-text {
+		padding: 58px 10px 25px;
+
+		h2 {
+			padding-bottom: 1px;
+			color: $color_primary_base;
+			font-weight: 500;
+			font-size: 19px;
+			line-height: 21px;
+
+			+ p {
+				margin-top: 7px;
+			}
+		}
+
+		p {
+			color: #000;
+			font-size: 15px;
+			line-height: 19px;
+		}
+
+		+ .mm_bom-item_form {
+			margin-top: -24px;
+		}
+	}
+
+	&-form {
+		margin-top: -11px;
+		padding: 0 14px 24px;
+
+		li:nth-child(n+2) {
+			margin-top: 4px;
+		}
+	}
+
+	&-btngroup {
+		position: relative;
+		padding: 27px 16px 17px;
+		background: #e1e1e1;
+		
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -9px;
+			@include triangle(#fff, bottom, 9px);
+			content: "";
+		}
+		
+		ul {
+			height: 48px;
+		}
+
+		li:nth-child(n+2) {
+			margin-left: 7px;
+		}
+
+		button {
+			font-size: 16px;
+			line-height: 48px;
+
+			&.btn_no {
+				background: #424242;
+				color: #fff;
+			}
+
+			&.btn_ok {
+				background: $color_primary_base;
+				color: #fff;
+			}
+		}
+	}
+}
+///-- 팝업 요소

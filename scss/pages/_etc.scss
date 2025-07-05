@@ -1,0 +1,93 @@
+@charset 'utf-8';
+
+/**
+** 페이지
+** 입점신청, 기타
+**/
+
+/// 앱전용화면
+.m-app {
+	visibility: hidden;
+	position: fixed;
+	z-index: $zIndex_most;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	&.__on {
+		visibility: inherit;
+	}
+	
+	> * {
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		
+		&.__on {
+			visibility: inherit;
+			z-index: auto;
+		}
+	}
+	
+	.mm_scroller {
+		background: #fff;
+		font-size: 0;
+		text-align: center;
+		
+		&:before {
+			height: 100%;
+			vertical-align: middle;
+			content: "";
+		}
+	}
+	
+	.image_app {
+		padding: 50px 0 100px;
+		width: 100%;
+		vertical-align: middle;
+	}
+
+	// 접근권한
+	&-access {
+		visibility: inherit;
+		z-index: auto;
+		
+		.mm_btn {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+	
+	// 쇼핑알림설정
+	&-shopping {
+		.mm_btngroup {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		
+		.mm_btn {
+			width: 50%;
+		}
+	}
+	
+	// 이용가이드
+	&-guide {
+		height: 100%;
+		background: rgba(#000, 0.85);
+		
+		.image_app {
+			position: relative;
+			padding: 0;
+		}
+	}
+}
+///-- 앱전용화면

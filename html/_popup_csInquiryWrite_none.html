@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko" class="__mm_popup__">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 소셜태그 -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<!--// 소셜태그 -->
+
+	<title>(팝업) 1:1 문의 작성하기 - 엔터식스 온라인몰</title>
+
+	<!-- 라이브러리 css -->
+	<link rel="stylesheet" href="../css/libs/fontello-custom.css">
+	<link rel="stylesheet" href="../css/libs/swiper-4.4.6.min.css">
+	<link rel="stylesheet" href="../css/libs/overlayscrollbars-1.6.1.min.css">
+	<link rel="stylesheet" href="../css/libs/pikaday.css">
+
+	<!-- 페이지 css -->
+	<link rel="stylesheet" class="link_font" resource="../css/fonts.css">
+	<link rel="stylesheet" href="../css/fonts_early.css">
+	<link rel="stylesheet" href="../css/app.css">
+
+	<!-- (D) 스크립트(폴리필, 라이브러리)는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+	<!-- 폴리필 스크립트 -->
+	<script src="../js/polyfill/es6-promise.auto-4.2.4.min.js"></script>
+
+	<!-- 라이브러리 스크립트 -->
+	<!-- <script src="../js/libs/webfontloader-1.6.28.min.js"></script> -->
+	<script src="../js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/libs/axios-0.18.0.min.js"></script>
+	<script src="../js/libs/underscore-1.9.1.min.js"></script>
+	<script src="../js/libs/load-image.all-2.20.1.min.js"></script>
+	<script src="../js/libs/tweenmax-2.0.2.min.js"></script>
+	<script src="../js/libs/swiper-4.4.6.min.js"></script>
+	<script src="../js/libs/sortable-1.6.0.min.js"></script>
+	<script src="../js/libs/moment-2.23.0.min.js"></script>
+	<!-- <script src="../js/libs/cleave-1.4.7.min.js"></script> -->
+	<!-- <script src="../js/libs/cleave-1.4.7.phone.kr.js"></script> -->
+	<!-- <script src="../js/libs/overlayscrollbars-1.6.1.min.js"></script> -->
+	<!-- <script src="../js/libs/pikaday-1.8.0.min.js"></script> -->
+	<!-- <script src="../js/libs/handlebars-4.0.12.min.js"></script> -->
+	<!-- <script src="../js/libs/template7-1.4.0.min.js"></script> -->
+	<!-- <script src="../js/libs/vue-2.5.21.min.js"></script> -->
+	<!-- <script src="../js/libs/autoNumeric-4.1.0.min.js"></script> -->
+	<!-- <script src="../js/libs/chart-2.7.3.min.js"></script> -->
+	<!-- <script src="../js/libs/ckeditor.full-4.10.0/ckeditor.js"></script> -->
+
+	<!-- 공통 선언 스크립트 -->
+	<script src="../js/app_common.js"></script>
+
+	<!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .mm_page-content 하단에 넣어주세요. -->
+</head>
+<body>
+	<div id="mm_app" class="mm_app">
+		<!-- 스킵 -->
+		<nav class="mm_skip">
+			<ul>
+				<li><a href="#mm_body" data-href="anchor">본문바로가기</a></li>
+			</ul>
+		</nav>
+		<!-- 스킵 -->
+
+		<!-- 화면 -->
+		<div class="mm_view">
+			<!-- 헤더 -->
+			<div class="mm_header">
+				<h1><span>문의하기</span></h1>
+				<div class="mm_box-lside">
+					<a href="#" data-href="{ '_type': 'back' }"><i class="mco_back"></i><span class="mm_ir-blind">뒤로가기</span></a>
+				</div>
+				<button type="button" class="btn_popup-close" onclick="mm.popup.close();"><i class="mco_popup-close"></i><span class="mm_ir-blind">팝업 닫기</span></button>
+			</div>
+			<!--// 헤더 -->
+
+			<!-- 내용 -->
+			<div id="mm_body" class="mm_page">
+				<div class="mm_scroller">
+					<div class="mm_box-flexcolumn">
+						<!-- 본문 -->
+						<div class="mm_page-content">
+							<!-- (D) 실제 내용을 추가하는 부분입니다. -->
+
+							<!-- (D) iframe 팝업은 html 요소에 '__mm_popup__' 클래스를 추가합니다. -->
+							<div class="mm_formbox m-popup-csinquiry-write">
+								<section>
+									<h5 class="mm_formbox-title"><span>문의유형</span><i class="mco_required"></i></h5>
+									<div class="mm_form-select">
+										<label>
+											<select>
+												<option value="">선택하세요</option>
+											</select>
+											<i class="mco_form-select"></i>
+										</label>
+									</div>
+								</section>
+								<section>
+									<h5 class="mm_formbox-title"><span>제목</span><i class="mco_required"></i></h5>
+									<div class="mm_form-text">
+										<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+										<label>
+											<input type="text" class="textfield"><i class="bg_text"></i>
+											<span class="text_placeholder">제목을 입력하세요</span>
+										</label>
+									</div>
+								</section>
+								<section>
+									<h5 class="mm_formbox-title"><span>내용</span><i class="mco_required"></i></h5>
+									<div class="mm_form-textarea">
+										<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+										<label>
+											<textarea class="textfield" data-text="{ '_isResize': true, '_resizeMin': 5 }"></textarea><i class="bg_text"></i>
+											<span class="text_placeholder">내용을 입력하세요</span>
+										</label>
+									</div>
+								</section>
+								<!-- <section>
+									<h5 class="mm_formbox-title"><span>파일첨부</span></h5>
+									<div class="mm_form-file">
+										<button type="button" class="btn_remove"><i class="mco_form-clear"></i><span class="mm_ir-blind">파일삭제</span></button>
+										<label>
+											<input type="file" data-file="{ '_fileSize': 5000 }">
+											<span class="text_path"></span>
+											<span class="mm_btn text_file">파일 첨부</span>
+										</label>
+									</div>
+									<div class="mm_formbox-attention">
+										<ul>
+											<li>5MB 미만의 파일만 업로드 가능합니다</li>
+										</ul>
+									</div>
+								</section> -->
+								<section>
+									<h5 class="mm_formbox-title"><span>이메일 알림</span><i class="mco_required"></i></h5>
+									<div class="mm_form-text">
+										<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+										<label>
+											<input type="email" class="textfield" readonly="" autocomplete="off"><i class="bg_text"></i>
+											<span class="text_placeholder">abc@enter6.co.kr</span>
+										</label>
+									</div>
+								</section>
+								<section>
+									<h5 class="mm_formbox-title"><span>SMS 알림</span></h5>
+									<div class="mm_form-text">
+										<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+										<label>
+											<input type="tel" class="textfield" readonly="" autocomplete="off"><i class="bg_text"></i>
+											<span class="text_placeholder">010-1234-5789</span>
+										</label>
+									</div>
+									<label class="mm_form-check">
+										<input type="checkbox">
+										<b class="mm_box-block">
+											<i class="mco_form-check"></i>
+											<span class="text_label">SMS 알림받기</span>
+										</b>
+									</label>
+								</section>
+
+								<div class="mm_btngroup">
+									<button type="button" class="mm_btn __btn_lg_primary__"><span>문의하기</span></button>
+									<!-- <a href="#" data-href="{ '_type': 'link' }" class="mm_btn __btn_lg_light_line__"><span>취소하기</span></a> -->
+								</div>
+							</div>
+
+							<!-- 현재 페이지 스크립트 -->
+							<!-- <script src="../js/.js"></script> -->
+						</div>
+						<!--// 본문 -->
+					</div>
+					<a href="#mm_app" class="btn_topmost" data-href="{ '_type': 'anchor' }" title="페이지 처음으로 가기"><i class="mco_topmost"></i><span>TOP</span></a>
+				</div>
+			</div>
+			<!--// 내용 -->
+		</div>
+		<!--// 화면 -->
+
+		<!-- 공통 페이지 스크립트 -->
+		<script src="../js/app_page-common.js"></script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+@charset 'utf-8';
+
+/**
+** 페이지
+** 브랜드검색, 브랜드샵
+**/
+
+/// 브랜드 메인
+.m-brand {
+	// 인기브랜드 (메인에서 사용)
+	&-best {
+		padding: 19px;
+
+		ul {
+			margin: -2.96735% 0 0 -2.96735%;
+		}
+
+		li {
+			float: left;
+			padding: 2.96735% 0 0 2.96735%;
+			width: 33.33333%;
+			text-align: center;
+
+			a {
+				display: block;
+				@include fluid-media(100%);
+			}
+		}
+
+		.image_brand {
+			border-radius: 100%;
+			background-color: #f2f2f2;
+
+			&:before {
+				height: 100%;
+				vertical-align: middle;
+				content: "";
+			}
+
+			span {
+				display: inline-block;
+				padding: 0 10px;
+				vertical-align: middle;
+				color: #4f4f4f;
+				font-size: 12px;
+				line-height: 14px;
+			}
+		}
+	}
+
+	// 브랜드검색
+	&-search {
+		position: relative;
+		margin: 19px 9px;
+		padding-right: 42px;
+		height: 42px;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: 1px solid #cfcfcf;
+			content: "";
+		}
+
+		label {
+			border-color: transparent;
+		}
+
+		.btn_search {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 42px;
+			height: 42px;
+			color: $color_primary_base;
+			font-size: 18px;
+			line-height: 42px;
+		}
+	}
+
+	// 브랜드정렬
+	&-sort {
+		&-menu {
+			margin: -6px 8px 0;
+			padding: 0 7px 19px 0;
+			text-align: center;
+			font-size: 0;
+
+			ul {
+				display: none;
+				
+				&:after {
+					content: none;
+				}
+				
+				&.m--menu-en {
+					+ .m--menu-ko {
+						display: inline;
+					}
+					
+					.__sort-en & {
+						display: inline;
+	
+						+ .m--menu-ko {
+							display: none;
+						}
+					}
+				}
+			}
+
+			li {
+				display: inline-block;
+				margin: 6px 0 0 7px;
+				background: #f7f7f7;
+				color: #b1b1b1;
+				font-size: 16px;
+				line-height: 29px;
+
+				a {
+					width: 32px;
+					height: 32px;
+					border: 1px solid #c5c5c5;
+
+					&.__on {
+						border: 0;
+						background: $color_primary_base;
+						color: #fff;
+						line-height: 30px;
+					}
+				}
+			}
+
+			.btn_change-lang {
+				margin: 6px 0 0 7px;
+				width: 110px;
+				height: 32px;
+				border: 1px solid #c5c5c5;
+				background: #f7f7f7;
+				color: #b1b1b1;
+				font-size: 16px;
+				line-height: 29px;
+
+				&:before {
+					content: "ABC";
+				}
+
+				&.__sort-en {
+					&:before {
+						content: "ㄱㄴㄷ";
+					}
+				}
+			}
+		}
+
+		&-list {
+			border-top: 1px solid #e1e1e1;
+			
+			ul {
+				display: none;
+				
+				&.m--list-en {
+					+ .m--list-ko {
+						display: block;
+					}
+					
+					.__sort-en & {
+						display: block;
+	
+						+ .m--list-ko {
+							display: none;
+						}
+					}
+				}
+			}
+			
+			li {
+				position: relative;
+				padding-right: 44px;
+				border-bottom: 1px solid #e1e1e1;
+
+				a {
+					display: block;
+					padding: 8px 0 10px 18px;
+					color: #424242;
+					font-weight: 300;
+					font-size: 14px;
+					line-height: 18px;
+				}
+			}
+
+			.mm_like {
+				top: 50%;
+				right: 15px;
+				margin-top: -12px;
+				background: none;
+				color: #b1b1b1;
+				font-size: 14px;
+
+				.mco_like-full {
+					color: $color_primary_base;
+				}
+			}
+		}
+
+		.mm_text-none {
+			color: #424242;
+			font-weight: 300;
+			font-size: 14px;
+		}
+	}
+}
+///-- 브랜드 메인
+
+/// 브랜드샵
+.m-brandshop-title {
+	position: relative;
+	margin-bottom: 22px;
+	padding-top: 29.09091%;
+	background: #2d3471 no-repeat 50% 50%;
+	background-size: cover;
+	color: #fff;
+	text-align: center;
+	
+	&-inner {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: 0;
+		@include transform(translateY(-50%));
+	}
+
+	h3 {
+		padding-bottom: 9px;
+		font-size: 18px;
+		font-weight: 300;
+	}
+
+	.mm_like {
+		position: relative;
+	}
+}
+///-- 브랜드샵

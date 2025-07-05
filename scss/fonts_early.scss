@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+@import 'helpers/functions';
+@import 'helpers/mixins';
+@import 'helpers/variables';
+
+/**
+** font-face
+** 마지막 파라미터 기본 값은 eot woff2 woff 입니다.
+**/
+
+// $path: '../fonts/';// local
+$path: '//image.enter6.co.kr/data/fonts/shop/mobile/';// CDN
+
+/// fontello
+@include font-face('Fontello', $path + 'fontello', 400, woff2 woff);

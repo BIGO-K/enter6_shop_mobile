@@ -1,0 +1,172 @@
+@charset 'utf-8';
+
+/**
+** 컴포넌트 코어
+** 버튼, 버튼그룹 등 버튼의 기본 단위
+**/
+
+/// 탭인덱스
+[tabindex] {
+	cursor: pointer;
+}
+///-- 탭인덱스
+
+/// 기본형
+.mm_btn {
+	overflow: hidden;
+	position: relative;
+	padding: 0 12px;
+	width: 100%;
+	height: 42px;
+	background: #555;
+	color: #fff;
+	font-size: 15px;
+	line-height: 42px;
+	text-align: center;
+
+	&:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 1px solid transparent;
+		content: "";
+	}
+
+	// 사이즈 - base 제외 / 없음 null (type, height, font-size)
+	$sizes: ('sm', 36, 13), ('xs', null, null), ('2xs', null, null),
+			('lg', 50, 17), ('xl', 53, 16), ('2xl', null, null);
+	@each $type, $height, $fontSize in $sizes {
+		&[class*="_#{$type}_"] {
+			@if ($height) {
+				height: $height + px;
+				font-size: $fontSize + px;
+				line-height: $height + px;
+			}
+		}
+	}
+	
+	// 색상 - base 제외 / 없음 null (type, border-color, background-color, color)
+	$colors: ('light', null, null, null), ('lighter', null, null, null), ('lightest', null, null, null),
+			('dark', #4f4f4f, #fff, null), ('darker', #333, #fff, null), ('darkest', null, #fff, null),
+			('primary', $color_primary_base, #fff, null), ('secondary', $color_secondary_base, #fff, null), ('tertiary', $color_tertiary_base, #fff, null);
+	@each $type, $bgColor, $fontColor, $borderColor in $colors {
+		&[class*="_#{$type}_"] {
+			@if ($bgColor) {
+				background: $bgColor;
+				color: $fontColor;
+		
+				&:after {
+					border-color: $borderColor;
+				}
+			}
+		}
+	}
+
+	// 라인 - base 제외 / 없음 null (type, border-color, background-color, color)
+	&[class*="_line_"] {
+		background: #fff;
+		color: #666;
+
+		&:after {
+			border-color: #7b7b7b;
+		}
+		
+		$lines: ('light', #fff, #999, #b1b1b1), ('lighter', #fff, null, null), ('lightest', #fff, null, null),
+				('dark', #fff, null, null), ('darker', #fff, null, null), ('darkest', #fff, #000, #000),
+				('primary', #fff, $color_primary_base, $color_primary_base), ('secondary', #fff, $color_secondary_base, $color_secondary_base), ('tertiary', #fff, $color_tertiary_base, $color_tertiary_base),
+				('naver', #fff, $color_naver_base, $color_naver_light), ('transparent', transparent, null, null);
+		@each $type, $bgColor, $fontColor, $borderColor in $lines {
+			&[class*="_#{$type}_"] {
+				@if ($borderColor) {
+					background: $bgColor;
+					color: $fontColor;
+			
+					&:after {
+						border-color: $borderColor;
+					}
+				}
+			}
+		}
+	}
+
+	// button 비활성
+	&:disabled {
+		@include opacity(0.4);
+	}
+
+	// a 다운로드 속성
+	&[download] {
+		// padding-right: 0 !important;
+		// width: auto;
+		// 
+		// .mco_download {
+		// 	overflow: hidden;
+		// 	margin-left: 13px;
+		// 	width: 34px;
+		// 	height: 100%;
+		// 	background: $color_tertiary_base;
+		// 	color: #fff;
+		// 	font-size: 16px;
+		// 	text-align: center;
+		// 
+		// 	&:before {
+		// 		margin-top: -1px;
+		// 	}
+		// }
+	}
+}
+///-- 기본형
+
+/// 버튼그룹
+.mm_btngroup {
+	text-align: center;
+	@include clearfix;
+
+	// 가운데
+	.mm_box-inline {
+		font-size: 0;
+		white-space: nowrap;
+	}
+
+	// 위치고정
+	&.__btngroup_fixed__ {
+		// position: relative;
+		// height: 58px;
+		//
+		// > * {
+		// 	position: fixed;
+		// 	z-index: $zIndex_floating;
+		// 	bottom: 0;
+		// 	left: 0;
+		// 	padding: 9px 15px;
+		// 	width: 100%;
+		// 	border-top: 1px solid #d3d3d3;
+		// 	background: #f5f5f5;
+		// 	@include transform(translate3d(0, 0, 0));
+		//
+		// 	// 폼요소 포커싱되면 페이지 하단으로 이동
+		// 	.__focus & {
+		// 		position: absolute;
+		// 		bottom: 0;
+		// 	}
+		//
+		// 	// 툴바가 없으면 화면 하단으로 이동
+		// 	.__toolbar-hide & {
+		// 		bottom: 0;
+		// 	}
+		//
+		// 	.text_count {
+		// 		margin-bottom: 8px;
+		// 		font-size: 15px;
+		// 		text-align: right;
+		// 	}
+		//
+		// 	li:nth-child(n+2) {
+		// 		margin-left: 4px;
+		// 	}
+		// }
+	}
+}
+///-- 버튼그룹

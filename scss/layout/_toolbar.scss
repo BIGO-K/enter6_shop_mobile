@@ -1,0 +1,90 @@
+@charset 'utf-8';
+
+/**
+** 툴바
+**/
+
+/// 툴바 영역
+.mm_toolbar {
+	position: absolute;
+	z-index: $zIndex_toolbar;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: $height_toolbar_base;
+	border-top: 1px solid #b2b2b2;
+	background: #fff;
+	@include transition(transform $time_fast);
+	
+	// 툴바 숨김 (아래로 이동)
+	// .__expand &,// 화면 확장 (헤더/툴바 숨김)
+	.__focus & {
+		@include opacity(0, none);
+		@include transform(translateY(100%));
+		@include transition(opacity 0s $time_fast, transform $time_fast);
+	}
+	
+	> ul {
+		height: 100%;
+	
+		> li {
+			button,
+			a {
+				position: relative;
+				padding-top: 7px;
+			}
+			
+			[class*="mco"] {
+				height: 22px;
+				font-size: 18px;
+				line-height: 22px;
+			}
+			
+			.mco_menu {
+				font-size: 14px;
+			}
+			
+			.mco_mypage {
+			}
+			
+			.mco_home {
+			}
+			
+			.mco_cart {
+				position: relative;
+				
+				.text_badge {
+					position: absolute;
+					top: 0;
+					right: 0;
+					margin-top: -5px;
+					padding: 0 4px;
+					min-width: 15px;
+					height: 15px;
+					border-radius: 15px;
+					background: $color_primary_base;
+					color: #fff;
+					font-weight: 500;
+					font-size: 12px;
+					font-family: $fontFamily_latin;
+					line-height: 16px;
+					text-align: center;
+					@include transform(translateX(50%));
+				}
+			}
+			
+			.mco_recent {
+				line-height: 24px;
+			}
+			
+			span {
+				display: block;
+				padding-top: 4px;
+				color: #212121;
+				font-weight: 300;
+				font-size: 10px;
+			}
+		}
+	}
+}
+///-- 툴바 영역

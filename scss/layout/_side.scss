@@ -1,0 +1,350 @@
+@charset 'utf-8';
+
+/**
+** 사이드바
+**/
+
+/// 사이드바
+.mm_sidebar {
+	position: absolute;
+	z-index: $zIndex_sidebar;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@include opacity(0, none);
+	@include transform(translateX(-100%));
+	@include transition(opacity 0s $time_base, transform 0s $time_base);
+
+	// 사이드바 열림
+	.__side & {
+		@include opacity(1, auto);
+		@include transform(translateX(0));
+		@include transition(opacity 0s, transform 0s);
+		
+		.btn_sidebar-area {
+			@include opacity(1);
+		}
+		
+		.mm_sidebar-inner {
+			@include transform(translateX(0));
+		}
+	}
+
+	.btn_sidebar-area {
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0.4);
+		@include opacity(0);
+		@include transition(opacity $time_base);
+		cursor: default;
+		-webkit-tap-highlight-color: transparent;
+	}
+	
+	&-inner {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: #f2f2f2;
+		@include transform(translateX(-100%));
+		@include transition(transform $time_base);
+		
+		.mm_flex-equal {
+			position: relative;
+		}
+	}
+
+	.btn_sidebar-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 47px;
+		height: 45px;
+		color: #fff;
+		font-size: 17px;
+		text-align: center;
+		line-height: 45px;
+	}
+}
+///-- 사이드바
+
+/// 사이드바 헤드
+.mm_sidebar-head {
+	position: relative;
+	height: 46px;
+	background: $color_grade_vip;
+	
+	// 등급별색상
+	$grades: ('_vip_', $color_grade_vip), ('_gold_', $color_grade_gold), ('_silver_', $color_grade_silver), ('_family_', $color_grade_family);
+	@each $grade, $bgColor in $grades {
+		[class*="#{$grade}"] & {
+			background: $bgColor;
+		}
+	}
+	
+	&:before {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-top: 1px solid rgba(#000, 0.1);
+		content: "";
+	}
+	
+	li {
+		float: left;
+		position: relative;
+		height: 45px;
+		color: #fff;
+		font-weight: 300;
+		font-size: 17px;
+		line-height: 45px;
+		
+		&:nth-child(n+2) {
+			padding-left: 1px;
+			
+			&:before {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-top: -6px;
+				height: 12px;
+				border-left: 1px solid rgba(#000, 0.1);
+				content: "";
+			}
+		}
+		
+		a {
+			padding: 0 15px;
+		}
+	}
+	
+	.text_member {
+		padding: 13px 14px 0;
+		height: 100%;
+		color: #fff;
+		font-weight: 300;
+		font-size: 17px;
+		line-height: 19px;
+		
+		.image_grade {
+			margin-right: 6px;
+			width: 19px;
+			height: 19px;
+		}
+	}
+}
+///-- 사이드바 헤드
+
+/// 사이드바 마이페이지메뉴
+.mm_sidebar-mymenu {
+	background: $color_grade_vip;
+	
+	// 등급별색상
+	$grades: (_vip_, $color_grade_vip), (_gold_, $color_grade_gold), (_silver_, $color_grade_silver), (_family_, $color_grade_family);
+	@each $grade, $bgColor in $grades {
+		[class*="#{$grade}"] & {
+			background: $bgColor;
+		}
+	}
+	
+	ul {
+		height: 94px;
+	}
+	
+	li {
+		color: #fff;
+		
+		&:nth-child(n+2) {
+			border-left: 1px solid rgba(#000, 0.1);
+		}
+		
+		i {
+			padding-top: 27px;
+			font-size: 22px;
+			
+			&.mco_like {
+				padding-top: 25px;
+				font-size: 24px;
+			}
+		}
+		
+		span {
+			display: block;
+			margin-top: 14px;
+			font-weight: 300;
+			font-size: 13px;
+		}
+	}
+}
+///-- 사이드바 마이페이지메뉴
+
+/// 사이드바 카테고리
+.mm_sidebar-category {
+	overflow: hidden;
+	padding: 18px 0 14px;
+	background: #fff;
+	
+	ul {
+		margin-top: -3px;
+		
+		li {
+			float: left;
+			width: 25%;
+			
+			a {
+				display: block;
+				position: relative;
+				padding: 1px 0 11px;
+				height: 75px;
+				text-align: center;
+			}
+			
+			.mm_ico-category {
+				display: block;
+				margin: 0 auto;
+				@include transform(scale(0.8));
+			}
+			
+			span {
+				display: inline-block;
+				position: absolute;
+				left: 50%;
+				margin-top: -2px;
+				color: #000;
+				font-weight: 300;
+				font-size: 13px;
+				white-space: nowrap;
+				@include transform(translateX(-50%));
+			}
+		}
+	}
+}
+///-- 사이드바 카테고리
+
+/// 사이드바 브랜드
+.mm_sidebar-brand {
+	padding: 18px 0 22px;
+	background: #fff;
+	
+	&-list {
+		margin-top: 8px;
+	}
+	
+	.mm_swiper-inner {
+		padding: 0 17px;
+	}
+	
+	li {
+		display: inline-block;
+		width: auto;
+	}
+	
+	.mm_image-brand {
+		//
+	}
+	
+	> a {
+		display: block;
+		margin: 12px auto 0;
+		width: 220px;
+		height: 36px;
+		border: 1px solid #e1e1e1;
+		border-radius: 36px;
+		background: #f7f7f7;
+		color: #424242;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 32px;
+		text-align: center;
+		
+		.mco_search {
+			margin: 1px 0 -1px 7px;
+			font-size: 13px;
+		}
+	}
+}
+///-- 사이드바 브랜드
+
+/// 사이드바 상품메뉴
+.mm_sidebar-prodmenu {
+	background: #fff;
+	
+	ul {
+		height: 94px;
+	}
+	
+	li {
+		color: #494949;
+		
+		&:nth-child(n+2) {
+			border-left: 1px solid #e1e1e1;
+		}
+		
+		i {
+			padding-top: 23px;
+			color: #666;
+			font-size: 22px;
+			line-height: 30px;
+			
+			&.mco_now {
+				// font-size: 24px;
+			}
+		}
+		
+		span {
+			display: block;
+			margin-top: 8px;
+			font-weight: 300;
+			font-size: 13px;
+		}
+	}
+}
+///-- 사이드바 상품메뉴
+
+/// 사이드바 하단
+.mm_sidebar-foot {
+	background: #e1e1e1;
+	
+	ul {
+		height: 44px;
+	}
+	
+	li {
+		position: relative;
+		color: #7b7b7b;
+		font-weight: 300;
+		font-size: 13px;
+		line-height: 44px;
+		
+		&:nth-child(n+2) {
+			padding-left: 1px;
+			
+			&:before {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-top: -5px;
+				height: 10px;
+				border-left: 1px solid #cfcfcf;
+				content: "";
+			}
+		}
+		
+		i {
+			margin-right: 5px;
+			color: #999;
+			
+			&.mco_cs {
+				margin-top: 1px;
+			}
+			
+			&.mco_setup {
+				font-size: 12px;
+			}
+		}
+	}
+}
+///-- 사이드바 하단

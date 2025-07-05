@@ -1,0 +1,1367 @@
+@charset 'utf-8';
+
+/**
+** 페이지
+** 마이페이지
+**/
+
+/// 메인 상단정보
+.m-mymain-info {
+	.m-mymain-info-grade {
+		position: relative;
+
+		// 등급별색상
+		$grades: ('_vip_', $color_grade_vip), ('_gold_', $color_grade_gold), ('_silver_', $color_grade_silver), ('_family_', $color_grade_family);
+		@each $grade, $bgColor in $grades {
+			&[class*="#{$grade}"] {
+				figure {
+					background: $bgColor;
+				}
+
+				.mm_btngroup {
+					background: shade($bgColor, 12%);
+				}
+			}
+		}
+
+		figure {
+			padding: 37px 14px 13px 70px;
+
+			.image_grade {
+				position: absolute;
+				top: 37px;
+				left: 14px;
+				width: 44px;
+				height: 44px;
+			}
+
+			figcaption {
+				p {
+					margin-top: -2px;
+					color: #fff;
+					font-weight: 300;
+					font-size: 19px;
+					line-height: 24px;
+					text-indent: -2px;
+				}
+			}
+		}
+
+		.mm_btngroup {
+			padding-left: 11px;
+			height: 39px;
+			text-align: left;
+
+			a {
+				padding: 0 8px;
+				color: #fff;
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 39px;
+
+				.mco_link {
+					margin: 1px 0 -1px 6px;
+					font-size: 11px;
+				}
+			}
+		}
+	}
+
+	.m-mymain-info-coupon,
+	.m-mymain-info-point {
+		height: 50px;
+
+		dl {
+			position: relative;
+			padding: 0 25px 0 24px;
+			color: #212121;
+			font-size: 16px;
+			line-height: 48px;
+
+			dt {
+				float: left;
+			}
+
+			dd {
+				float: right;
+
+				strong {
+					display: inline-block;
+					margin-top: 2px;
+					color: $color_primary_base;
+					font-weight: 500;
+					font-size: 19px;
+					font-family: $fontFamily_latin;
+				}
+			}
+		}
+	}
+
+	.m-mymain-info-point {
+		border-left: 1px solid #e1e1e1;
+
+		dl {
+			padding: 0 25px 0 24px;
+
+			dd {
+				font-size: 17px;
+			}
+		}
+	}
+}
+///-- 메인 상단정보
+
+/// 메인 주문현황
+.m-mymain-order {
+	&-step {
+		position: relative;
+		padding: 9px 0 15px;
+
+		.mm_heading {
+			margin-bottom: 6px;
+			padding: 8px 14px;
+		}
+
+		.btn_shipping-setting {
+			position: absolute;
+			top: 12px;
+			right: 6px;
+			padding: 8px;
+			color: #666;
+			font-weight: 300;
+			font-size: 12px;
+
+			.mco_setting {
+				margin-right: 5px;
+				color: #7b7b7b;
+				line-height: 14px;
+			}
+		}
+
+		// 주문스텝
+		> ol {
+			margin-bottom: 12px;
+			padding: 0 6px;
+
+			li {
+				font-weight: 300;
+				font-size: 13px;
+				text-align: center;
+
+				a {
+					display: block;
+					padding: 10px 0;
+				}
+
+				strong {
+					display: block;
+					font-weight: 500;
+					font-size: 25px;
+					font-family: $fontFamily_latin;
+					margin-bottom: 3px;
+				}
+			}
+		}
+
+		// 취소/교환/반품
+		ul {
+			margin: 0 14px;
+			height: 37px;
+			background: #f2f2f2;
+
+			li {
+				color: #999;
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 37px;
+
+				&.__on {
+					color: #212121;
+				}
+			}
+
+			strong {
+				display: inline-block;
+				margin-left: 7px;
+				font-weight: 500;
+				font-size: 15px;
+				font-family: $fontFamily_latin;
+				line-height: 39px;
+			}
+		}
+	}
+
+	.mm_btngroup {
+		li {
+			border-top: 1px solid #e1e1e1;
+
+			a {
+				display: block;
+				position: relative;
+				padding: 0 18px;
+				height: 44px;
+				font-size: 16px;
+				line-height: 42px;
+				text-align: left;
+			}
+
+			.mco_link {
+				position: absolute;
+				top: 2px;
+				right: 20px;
+				color: #999;
+			}
+		}
+	}
+}
+///-- 메인 주문현황
+
+/// 메인 중단메뉴
+.m-mymain-menu {
+	ul {
+		height: 94px;
+	}
+
+	li {
+		&:nth-child(n+2) {
+			border-left: 1px solid #e1e1e1;
+		}
+
+		a {
+			display: block;
+			padding-top: 20px;
+			color: #424242;
+			text-align: center;
+
+			> i {
+				height: 32px;
+				line-height: 32px;
+			}
+
+			.mco_qna {
+				font-size: 26px;
+			}
+
+			.mco_review {
+				font-size: 22px;
+				line-height: 34px;
+			}
+
+			.mco_account {
+				font-size: 25px;
+				line-height: 34px;
+			}
+		}
+
+		span {
+			display: block;
+			margin-top: 6px;
+			font-weight: 300;
+			font-size: 14px;
+		}
+	}
+}
+///-- 메인 중단메뉴
+
+/// 메인 찜한상품/브랜드
+[class^="m-mymain-like"] {
+	padding-top: 9px;
+
+	.mm_heading {
+		margin-bottom: 6px;
+		padding: 0;
+
+		a {
+			padding: 8px 14px;
+		}
+
+		.mco_link {
+			margin: 5px 0 0 10px;
+			font-size: 11px;
+		}
+	}
+
+	.mm_swiper-inner {
+		padding: 0 14px;
+
+		.swiper-slide {
+			width: auto;
+		}
+	}
+
+	.mm_text-none {
+		padding: 39px 0;
+		color: #999;
+		font-size: 15px;
+		line-height: 22px;
+	}
+
+	// 찜한 상품
+	&.m-mymain-like-product {
+		padding-bottom: 24px;
+
+		.image_product {
+			position: relative;
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	// 찜한 브랜드
+	&.m-mymain-like-brand {
+		.mm_text-none {
+			padding-bottom: 23px;
+		}
+	}
+}
+///-- 메인 찜한상품/브랜드
+
+/// 주문현황 기간조회
+.m-myhistory-search {
+	@include clearfix;
+	padding: 10px 9px;
+	background: #f2f2f2;
+
+	dl {
+		float: left;
+		margin-top: 6px;
+
+		dt {
+			color: #666;
+			font-size: 13px;
+		}
+
+		dd {
+			margin-top: 6px;
+			font-size: 14px;
+			font-family: $fontFamily_latin;
+		}
+	}
+
+	.mm_form-select {
+		float: right;
+		width: 120px;
+	}
+}
+///-- 주문현황 기간조회
+
+/// 주문현황 상세보기
+.m-myhistory-detail {
+	.m--detail-price {
+		padding: 11px 6px;
+		border-top: 1px solid #f2f2f2;
+		background: #f7f7f7;
+		font-size: 0;
+
+		> span {
+			display: inline-block;
+			margin-left: 6px;
+			color: #7b7b7b;
+			font-size: 13px;
+			line-height: 18px;
+
+			i {
+				margin-right: 6px;
+				color: #000;
+				font-weight: 500;
+			}
+		}
+
+		strong {
+			font-family: $fontFamily_latin;
+
+			&:after {
+				font-size: 13px;
+				font-family: $fontFamily_base;
+				content: "원";
+			}
+		}
+
+		.text_dicount,
+		.text_dicount-coupon {
+			strong {
+				color: #000;
+			}
+
+			i {
+				margin-top: -2px;
+				font-size: 17px;
+			}
+		}
+	}
+}
+///-- 주문현황 상세보기
+
+/// 주문현황 주문자/배송지 정보
+.m-myhistory-address {
+	section {
+		&:nth-child(n+2) {
+			border-top: 1px solid #b9b9b9;
+		}
+	}
+
+	.mm_heading {
+		padding: 13px 9px;
+		border-bottom: 1px solid #b9b9b9;
+		font-weight: 500;
+		font-size: 15px;
+	}
+
+	ul {
+		padding: 8px 0 18px;
+	}
+
+	dl {
+		position: relative;
+		padding: 6px 9px 6px 92px;
+		font-size: 14px;
+		line-height: 18px;
+
+		dt {
+			position: absolute;
+			top: 6px;
+			left: 9px;
+			font-weight: 300;
+		}
+	}
+}
+///-- 주문현황 주문자/배송지 정보
+
+/// 주문현황 결제정보
+.m-myhistory-payment {
+	.mm_heading {
+		padding: 13px 9px;
+		border-bottom: 1px solid #b9b9b9;
+		font-weight: 500;
+		font-size: 15px;
+	}
+
+	.m--payment-capsule {
+		overflow: hidden;
+		height: 44px;
+		line-height: 42px;
+
+		> dt {
+			float: left;
+			padding-left: 9px;
+			font-weight: 300;
+			font-size: 14px;
+			width: 93px;
+		}
+
+		> dd {
+			float: right;
+			padding-right: 17px;
+
+			strong {
+				display:inline-block;
+				margin: 1px 0 -1px;
+				vertical-align: 0;
+				font-weight: 500;
+				font-size: 20px;
+				font-family: $fontFamily_latin;
+
+				&:after {
+					margin-left: 2px;
+					vertical-align: 1px;
+					font-weight: 300;
+					font-size: 16px;
+					font-family: $fontFamily_base;
+					content: "원";
+				}
+			}
+		}
+	}
+
+	> dl:not(.m--payment-capsule) {
+		> dd {
+			padding: 6px 0;
+			background: #f7f7f7;
+			font-size: 13px;
+
+			.m--payment-capsule {
+				overflow: hidden;
+				height: auto;
+				line-height: 24px;
+				
+				+ .m--calc-capsule {
+					margin-top: -1px;
+				}
+
+				> dt {
+					padding-left: 17px;
+					font-size: 13px;
+				}
+
+				> dd {
+					strong {
+						font-weight: 400;
+						font-size: 14px;
+
+						&:after {
+							font-size: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&-calc {
+		border: 1px solid #b9b9b9;
+		border-width: 1px 0;
+	}
+
+	&-type {
+		> dt {
+			padding-left: 9px;
+			height: 44px;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 42px;
+		}
+
+		dl {
+			position: relative;
+			padding-left: 93px;
+			
+			dt {
+				position: absolute;
+				left: 0;
+			}
+			
+			dd {
+				float: none !important;
+				padding: 3px 0;
+				line-height: 18px;
+			}
+		}
+	}
+}
+///-- 주문현황 결제정보
+
+/// 찜한상품
+.m-mylike-product {
+	> .mm_form-check {
+		margin-top: 14px;
+	}
+
+	> ul {
+		margin-top: 14px;
+		border-top: 1px solid #b9b9b9;
+	}
+
+	.mm_product-item {
+		.mm_btngroup {
+			position: absolute;
+			bottom: 14px;
+			right: 0;
+			font-size: 0;
+
+			> button {
+				margin-left: 5px;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+			}
+
+			.btn_delete {
+				border: 1px solid #cfcfcf;
+				background: #fff;
+				color: #a3a3a3;
+				font-size: 20px;
+			}
+
+			.btn_add-cart {
+				background: $color_primary_base;
+				color: #fff;
+				font-size: 16px;
+			}
+		}
+	}
+
+	~ .mm_btngroup {
+		margin: 27px 9px 0;
+	}
+}
+///-- 찜한상품
+
+/// 찜한브랜드
+.m-mylike-brand {
+	padding: 0 9px;
+
+	li {
+		float: left;
+		position: relative;
+		margin-top: 20px;
+		width: 50%;
+		text-align: center;
+
+		&:nth-child(-n+2) {
+			margin-top: 27px;
+		}
+
+		> a {
+			position: relative;
+			width: 120px;
+			margin: 0 auto;
+			text-align: center;
+
+			.mm_image-brand {
+				width: 120px;
+				height: 120px;
+			}
+
+			.text_brand {
+				display: block;
+				margin: 6px -12.5% 0;
+				height: 18px;
+				font-size: 14px;
+				line-height: 18px;
+				white-space: nowrap;
+				@include text-ellipsis(1);
+			}
+		}
+
+		.btn_remove {
+			position: absolute;
+			top: -9px;
+			left: 50%;
+			margin-left: 39px;
+			width: 30px;
+			height: 30px;
+			color: #999;
+			font-size: 12px;
+			line-height: 30px;
+		}
+	}
+
+	~ .mm_btngroup {
+		margin: 32px 9px 0;
+	}
+}
+///-- 찜한브랜드
+
+/// 상품후기관리
+.m-myreview {
+	.mm_heading {
+		padding: 33px 9px 17px;
+		border-bottom: 1px solid #e1e1e1;
+		font-weight: 300;
+		font-size: 17px;
+
+		strong {
+			margin-left: 9px;
+			font-weight: 700;
+
+			span {
+				font-weight: 300;
+			}
+		}
+	}
+
+	.mm_order-list {
+		> ol {
+			border-bottom: 0;
+		}
+
+		.mm_text-none {
+			padding: 117px 0;
+		}
+	}
+}
+///-- 상품후기관리
+
+/// 주문취소/반품/교환
+.m-mycomplain {
+	// 하단버튼
+	&-btngroup {
+		padding: 0 9px;
+		margin-top: 27px;
+
+		> *:nth-child(n+2) {
+			margin-top: 7px;
+		}
+	}
+
+	// 입력폼
+	&-form {
+		.mm_syncer-reason {
+			margin-top: 5px;
+		}
+
+		.mm_syncer-delivery-already {
+			.mm_form-text {
+				margin-top: 5px;
+			}
+		}
+
+		+ .m-mycomplain-form {
+			margin-top: 30px;
+			border-top: 1px solid #b9b9b9;
+		}
+	}
+
+	// 조회기간
+	&-search {
+		@include clearfix;
+		padding: 10px 9px;
+		background: #f2f2f2;
+
+		dl {
+			float: left;
+			margin-top: 6px;
+
+			dt {
+				color: #666;
+				font-size: 13px;
+			}
+
+			dd {
+				margin-top: 6px;
+				font-size: 14px;
+				font-family: $fontFamily_latin;
+			}
+		}
+
+		.mm_form-select {
+			float: right;
+			width: 120px;
+		}
+	}
+
+	// 교환반품목록
+	&-list {
+		.m--list-info {
+			@include flex-container();
+			padding: 0 14px;
+			height: 41px;
+			border-top: 1px solid #f2f2f2;
+			background: #f7f7f7;
+			color: #7b7b7b;
+			font-size: 13px;
+			line-height: 40px;
+
+			dd {
+				@include prefix(flex, 1, webkit ms);
+				margin-left: 9px;
+				color: #333;
+				font-family: $fontFamily_latin;
+				line-height: 42px;
+			}
+		}
+	}
+
+	// 교환반품신청내역
+	&-detail {
+		table {
+			border-bottom: 1px solid #e1e1e1;
+			font-size: 13px;
+			line-height: 17px;
+
+			tr {
+				border-top: 1px solid #e1e1e1;
+
+				 > * {
+					padding: 10px;
+					text-align: left;
+				 }
+			}
+
+			th {
+				background: #f9f9f9;
+				font-weight: 300
+			}
+
+			td {
+				.text_price {
+					&:after {
+						content: "원";
+					}
+				}
+
+				.text_delivery-note {
+					&:before {
+						margin-right: 3px;
+						content: "전달사항:"
+					}
+				}
+			}
+		}
+
+		.mm_btngroup {
+			margin: 27px 9px 0;
+		}
+	}
+}
+///-- 주문취소/반품/교환
+
+/// 개인정보관리
+.m-myinfo-menu {
+	li {
+		&:nth-child(n+2) {
+			border-top: 1px solid #e1e1e1;
+		}
+
+		a {
+			display: block;
+			position: relative;
+			height: 71px;
+		}
+
+		.mm_box {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			left: 0;
+			margin-top: -1px;
+			padding: 0 45px 0 18px;
+			@include transform(translateY(-50%));
+
+			strong {
+				font-size: 16px;
+			}
+
+			p {
+				margin-top: 6px;
+				color: #555;
+				height: 17px;
+				font-weight: 300;
+				font-size: 13px;
+				line-height: 17px;
+				@include text-ellipsis(1);
+			}
+		}
+
+		.mco_link {
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			color: #999;
+			font-size: 16px;
+			@include transform(translateY(-50%));
+		}
+	}
+}
+
+// 간편계정연결관리
+.m-myinfo-sociallogin {
+	.mm_heading {
+		padding: 17px 16px 18px;
+	}
+
+	li {
+		position: relative;
+		padding: 21px 19px;
+		border-top: 1px solid #e1e1e1;
+		text-align: right;
+
+		.mm_box {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			left: 0;
+			margin-top: -1px;
+			padding: 0 45px 0 18px;
+			text-align: left;
+			@include transform(translateY(-50%));
+
+			span {
+				font-size: 16px;
+
+				strong {
+					font-weight: 500;
+
+					&.text_sns-naver {
+						color: #90bb4f;
+					}
+
+					&.text_sns-facebook {
+						color: #66629b;
+					}
+
+					&.text_sns-kakao {
+						color: #eecb26;
+					}
+
+					&.text_sns-payco {
+						color: #f06565;
+					}
+				}
+			}
+
+			p {
+				margin-top: 4px;
+				color: #555;
+				height: 17px;
+				font-weight: 300;
+				font-size: 13px;
+				line-height: 17px;
+				@include text-ellipsis(1);
+			}
+		}
+	}
+}
+
+.m-myinfo-withdraw {
+	margin-bottom: -6px;
+	padding: 8px 0 0 8px;
+
+	.btn_withdraw {
+		position: relative;
+		padding: 10px;
+		color: #999;
+		font-size: 14px;
+
+		&:after {
+			position: absolute;
+			bottom: 6px;
+			right: 9px;
+			left: 10px;
+			border-top: 1px solid #999;
+			content: "";
+		}
+	}
+}
+///-- 개인정보관리
+
+/// 배송지관리 (배송지목록 팝업에서 사용)
+.m-myinfo-address {
+	.m--address-register {
+		padding: 22px 9px;
+
+		.mco_add {
+			margin-left: 6px;
+			font-size: 15px;
+			line-height: 52px;
+		}
+	}
+
+	.m--address-list {
+		li {
+			position: relative;
+			padding: 19px 0 12px;
+			border-bottom: 1px solid #e1e1e1;
+			
+			> a {
+				display: block;
+			}
+
+			dl {
+				padding: 0 14px;
+
+				dt {
+					margin-bottom: 7px;
+					height: 21px;
+					font-size: 15px;
+					line-height: 21px;
+
+					.text_default,
+					.text_recent {
+						display: inline-block;
+						margin-left: 10px;
+						padding: 0 12px;
+						height: 21px;
+						border: 1px solid $color_secondary_base;
+						color: $color_secondary_base;
+						font-size: 13px;
+						line-height: 18px;
+					}
+					
+					.text_recent {
+						margin-left: 4px;
+						border-color: $color_primary_base;
+						color: $color_primary_base;
+					}
+				}
+
+				dd {
+					font-size: 14px;
+					line-height: 18px;
+				}
+			}
+
+			.mm_btngroup {
+				margin: 4px 2px 0 0;
+				text-align: right;
+				font-size: 0;
+
+				> * {
+					position: relative;
+					padding: 10px 15px;
+					color: #7b7b7b;
+					font-size: 14px;
+
+					&:nth-child(n+2) {
+						&:before {
+							position: absolute;
+							top: 50%;
+							left: 0;
+							margin-top: -5px;
+							height: 10px;
+							border-left: 1px solid #cfcfcf;
+							content: "";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+///-- 배송지관리
+
+/// 계좌번호관리
+.m-myinfo-bank {
+	.m--bank-register {
+		padding: 22px 9px;
+
+		.mco_add {
+			margin-left: 6px;
+			font-size: 15px;
+			line-height: 52px;
+		}
+	}
+
+	.m--bank-list {
+		li {
+			position: relative;
+			padding: 19px 0 12px;
+			border-bottom: 1px solid #e1e1e1;
+
+			dl {
+				padding: 0 14px;
+
+				dt {
+					margin-bottom: 7px;
+					height: 21px;
+					font-size: 15px;
+					line-height: 21px;
+
+					.text_default {
+						display: inline-block;
+						margin-left: 10px;
+						padding: 0 12px;
+						height: 21px;
+						border: 1px solid $color_secondary_base;
+						color: $color_secondary_base;
+						font-size: 13px;
+						line-height: 18px;
+					}
+				}
+
+				dd {
+					font-size: 14px;
+					line-height: 18px;
+				}
+			}
+
+			.mm_btngroup {
+				margin: 4px 2px 0 0;
+				text-align: right;
+				font-size: 0;
+
+				> * {
+					position: relative;
+					padding: 10px 15px;
+					color: #7b7b7b;
+					font-size: 14px;
+
+					&:nth-child(n+2) {
+						&:before {
+							position: absolute;
+							top: 50%;
+							left: 0;
+							margin-top: -5px;
+							height: 10px;
+							border-left: 1px solid #cfcfcf;
+							content: "";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+///-- 계좌번호관리
+
+/// 쿠폰 조회/등록
+.m-mycoupon-register {
+	padding-bottom: 32px;
+
+	.mm_btngroup {
+		margin-top: 16px;
+	}
+}
+
+.m-mycoupon-tab {
+	.mm_tabmenu {
+		padding: 22px 9px 30px;
+		border-bottom: 0;
+
+		> ul {
+			height: 35px;
+
+			.btn_tab {
+				border: 1px solid #cfcfcf;
+				background: #fff;
+				font-size: 14px;
+				color: #7b7b7b;
+				line-height: 32px;
+
+				&.__tab-on {
+					border-color: #555;
+					background: #555;
+					color: #fff;
+
+					&:before {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.m-mycoupon-list {
+	border-bottom: 1px solid #e1e1e1;
+
+	h3 {
+		padding: 0 12px 12px;
+		font-size: 16px;
+	}
+
+	li {
+		border-top: 1px solid #e1e1e1;
+
+		figure {
+			position: relative;
+			padding: 26px 20px 22px 177px;
+
+			.image_coupon {
+				position: absolute;
+				top: 50%;
+				left: (178px / 2);
+				width: 120px;
+				margin-left: -60px;
+				@include transform(translateY(-50%));
+			}
+		}
+
+		figcaption {
+			.text_coupon {
+				display: block;
+				font-size: 15px;
+				line-height: 17px;
+			}
+
+			.text_period {
+				display: block;
+				margin-top: 3px;
+				color: #666;
+				font-size: 13px;
+				line-height: 15px;
+				white-space: nowrap;
+			}
+
+			.btn_coupon-range {
+				margin-top: 11px;
+				margin-left: -8px;
+				padding: 8px;
+				font-size: 13px;
+				color: #4f4f4f;
+
+				> span {
+					position: relative;
+
+					&:after {
+						position: absolute;
+						right: -1px;
+						bottom: 0;
+						left: 0;
+						border-top: 1px solid #4f4f4f;
+						content: "";
+					}
+				}
+			}
+
+			.btn_download-coupon {
+				position: absolute;
+				right: 7px;
+				bottom: 17px;
+				padding: 10px 20px;
+				font-size: 19px;
+
+				.mco_download {
+					@include transform(rotate(180deg));
+				}
+			}
+		}
+	}
+
+	.mm_text-none {
+		padding: 115px 0;
+		border-top: 1px solid #e1e1e1;
+	}
+}
+///-- 쿠폰 조회/등록
+
+/// 포인트 정보
+.m-mypoint-info {
+	padding-bottom: 13px;
+
+	.text_price {
+		display: inline-block;
+		vertical-align: 0;
+		font-family: $fontFamily_latin;
+		font-weight: 500;
+		font-size: 26px;
+
+		&:after {
+			margin-left: 2px;
+			vertical-align: 1px;
+			font-weight: 400;
+			font-size: 16px;
+			font-family: $fontFamily_base;
+			content: "원";
+		}
+	}
+
+	.m--info-head {
+		position: relative;
+		margin-bottom: 13px;
+		padding: 47px 15px 37px;
+		background: #eaeaea;
+
+		.image_point {
+			width: 62px;
+			height: 62px;
+		}
+
+		dl {
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			left: 87px;
+			margin-top: 6px;
+			@include transform(translateY(-50%));
+
+			dt {
+				font-size: 18px;
+				line-height: 20px;
+			}
+
+			dd {
+				margin-top: 3px;
+			}
+		}
+	}
+
+	> dl {
+		padding: 0 16px;
+		line-height: 42px;
+
+		dt {
+			float: left;
+			font-size: 16px;
+		}
+
+		dd {
+			float: right;
+
+			.text_price {
+				font-size: 20px;
+			}
+		}
+	}
+}
+///-- 포인트 정보
+
+/// 포인트 내역
+.m-point-history {
+	padding-top: 17px;
+
+	> .mm_box-flex {
+		padding: 0 9px;
+
+		.mm_form-select {
+			&:nth-child(n+2) {
+				margin-left: -1px;
+			}
+		}
+	}
+
+	ul {
+		li {
+			position: relative;
+			padding: 17px 9px 14px;
+			border-bottom: 1px solid #e1e1e1;
+
+			.text_tag {
+				display: inline-block;
+				height: 21px;
+				color: #666;
+				font-size: 13px;
+				line-height: 18px;
+
+				&.__tag-used {
+					strong {
+						border-color: #4f4f4f;
+						background: transparent;
+						color: #424242;
+					}
+				}
+
+				> * {
+					float: left;
+					padding: 0 8px;
+				}
+
+				strong {
+					border: 1px solid #555;
+					background: #555;
+					color: #fff;
+				}
+
+				span {
+					border: 1px solid #999;
+					border-left: 0;
+				}
+			}
+
+			p {
+				margin: 9px 0;
+				color: #212121;
+				font-size: 14px;
+				line-height: 16px;
+			}
+
+			.text_point {
+				display: block;
+				padding-right: 7px;
+				vertical-align: 0;
+				font-family: $fontFamily_latin;
+				font-weight: 500;
+				font-size: 20px;
+				text-align: right;
+
+				&:after {
+					margin-left: 2px;
+					vertical-align: 1px;
+					font-weight: 400;
+					font-size: 16px;
+					font-family: $fontFamily_base;
+					content: "원";
+				}
+			}
+
+			.text_exdate {
+				position: absolute;
+				top: 21px;
+				right: 16px;
+				color: #666;
+				font-size: 12px;
+			}
+		}
+	}
+}
+///-- 포인트 내역

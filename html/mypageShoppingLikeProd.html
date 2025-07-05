@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 소셜태그 -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<!--// 소셜태그 -->
+
+	<title>찜한 상품 &#60; 마이페이지 - 엔터식스 온라인몰</title>
+
+	<!-- 라이브러리 css -->
+	<link rel="stylesheet" href="../css/libs/fontello-custom.css">
+	<link rel="stylesheet" href="../css/libs/swiper-4.4.6.min.css">
+	<link rel="stylesheet" href="../css/libs/overlayscrollbars-1.6.1.min.css">
+	<link rel="stylesheet" href="../css/libs/pikaday.css">
+
+	<!-- 페이지 css -->
+	<link rel="stylesheet" class="link_font" resource="../css/fonts.css">
+	<link rel="stylesheet" href="../css/fonts_early.css">
+	<link rel="stylesheet" href="../css/app.css">
+
+	<!-- (D) 스크립트(폴리필, 라이브러리)는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+	<!-- 폴리필 스크립트 -->
+	<script src="../js/polyfill/es6-promise.auto-4.2.4.min.js"></script>
+
+	<!-- 라이브러리 스크립트 -->
+	<!-- <script src="../js/libs/webfontloader-1.6.28.min.js"></script> -->
+	<script src="../js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/libs/axios-0.18.0.min.js"></script>
+	<script src="../js/libs/underscore-1.9.1.min.js"></script>
+	<script src="../js/libs/load-image.all-2.20.1.min.js"></script>
+	<script src="../js/libs/tweenmax-2.0.2.min.js"></script>
+	<script src="../js/libs/swiper-4.4.6.min.js"></script>
+	<script src="../js/libs/sortable-1.6.0.min.js"></script>
+	<script src="../js/libs/moment-2.23.0.min.js"></script>
+	<!-- <script src="../js/libs/cleave-1.4.7.min.js"></script> -->
+	<!-- <script src="../js/libs/cleave-1.4.7.phone.kr.js"></script> -->
+	<!-- <script src="../js/libs/overlayscrollbars-1.6.1.min.js"></script> -->
+	<!-- <script src="../js/libs/pikaday-1.8.0.min.js"></script> -->
+	<!-- <script src="../js/libs/handlebars-4.0.12.min.js"></script> -->
+	<!-- <script src="../js/libs/template7-1.4.0.min.js"></script> -->
+	<!-- <script src="../js/libs/vue-2.5.21.min.js"></script> -->
+	<!-- <script src="../js/libs/autoNumeric-4.1.0.min.js"></script> -->
+	<!-- <script src="../js/libs/chart-2.7.3.min.js"></script> -->
+	<!-- <script src="../js/libs/ckeditor.full-4.10.0/ckeditor.js"></script> -->
+	
+	<!-- 공통 선언 스크립트 -->
+	<script src="../js/app_common.js"></script>
+
+	<!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .mm_page-content 하단에 넣어주세요. -->
+</head>
+<body>
+	<div id="mm_app" class="mm_app">
+		<!-- 스킵 -->
+		<nav class="mm_skip">
+			<ul>
+				<li><a href="#mm_body" data-href="anchor">본문바로가기</a></li>
+			</ul>
+		</nav>
+		<!-- 스킵 -->
+
+		<!-- 화면 -->
+		<div class="mm_view">
+			<!-- 헤더 -->
+			<div class="mm_header">
+				<h1><span>찜한 상품</span></h1>
+				<div class="mm_box-lside">
+					<a href="#" data-href="{ '_type': 'back' }"><i class="mco_back"></i><span class="mm_ir-blind">뒤로가기</span></a>
+					<a href="/" data-href="{ '_type': 'home' }"><i class="mco_home"></i><span class="mm_ir-blind">홈</span></a>
+				</div>
+				<div class="mm_box-rside">
+					<!-- <a href="#" data-href="{ '_type': 'link' }"><i class="mco_cart"></i><span class="text_badge">2</span><span class="mm_ir-blind">장바구니</span></a> -->
+					<!-- <a href="#" data-href="{ '_type': 'link' }"><i class="mco_mypage"></i><span class="mm_ir-blind">마이페이지</span></a> -->
+					<a href="_popup_search.html" data-href="{ '_type': 'popup' }"><i class="mco_search"></i><span class="mm_ir-blind">검색</span></a>
+				</div>
+			</div>
+			<!--// 헤더 -->
+			
+			<!-- 내용 -->
+			<div id="mm_body" class="mm_page">
+				<div class="mm_scroller">
+					<div class="mm_box-flexcolumn">
+						<!-- 본문 -->
+						<div class="mm_page-content">
+							<!-- (D) 실제 내용을 추가하는 부분입니다. -->
+							
+							<div class="mm_product-list __list-wide m-mylike-product">
+								<label class="mm_form-check">
+									<input type="checkbox" name="dev_check-product" data-check="{ '_type': 'check_all' }">
+									<b class="mm_box-block">
+										<i class="mco_form-check"></i>
+										<span class="text_label">전체선택</span>
+									</b>
+								</label>
+								
+								<ul>
+									<li>
+										<div class="mm_product-item">
+											<label class="mm_form-check">
+												<input type="checkbox" name="dev_check-product">
+												<b class="mm_box-block">
+													<i class="mco_form-check"></i>
+													<span class="text_label mm_ir-blind">상품 선택</span>
+												</b>
+											</label>
+											<a href="productDetail.html" data-href="{ '_type': 'popup' }">
+												<figure>
+													<i class="mm_preload mm_bg-contain image_product" data-preload="{ '_src': '../images/_sample/product_x240_1.jpg' }"></i>
+													<figcaption>
+														<span class="text_brand">케네스레이디</span>
+														<span class="text_product">체크 플라워패턴 블라우스 EGBLHJ9600</span>
+														<span class="text_price">
+															<del>29,900</del>
+															<strong>20,260</strong>
+														</span>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="mm_btngroup">
+												<button type="button" class="btn_delete"><i class="mco_delete"></i><span class="mm_ir-blind">상품삭제</span></button>
+												<button type="button" class="btn_add-cart"><i class="mco_cart"></i><span class="mm_ir-blind">장바구니에 담기</span></button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="mm_product-item">
+											<label class="mm_form-check">
+												<input type="checkbox" name="dev_check-product">
+												<b class="mm_box-block">
+													<i class="mco_form-check"></i>
+													<span class="text_label mm_ir-blind">상품 선택</span>
+												</b>
+											</label>
+											<a href="productDetail.html" data-href="{ '_type': 'popup' }">
+												<figure>
+													<i class="mm_preload mm_bg-contain image_product" data-preload="{ '_src': '../images/_sample/product_x240_2.jpg' }"></i>
+													<figcaption>
+														<span class="text_brand">케네스레이디</span>
+														<span class="text_product">체크 플라워패턴 블라우스 EGBLHJ9600</span>
+														<span class="text_price">
+															<del>29,900</del>
+															<strong>20,260</strong>
+														</span>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="mm_btngroup">
+												<button type="button" class="btn_delete"><i class="mco_delete"></i><span class="mm_ir-blind">상품삭제</span></button>
+												<button type="button" class="btn_add-cart"><i class="mco_cart"></i><span class="mm_ir-blind">장바구니에 담기</span></button>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="mm_product-item">
+											<label class="mm_form-check">
+												<input type="checkbox" name="dev_check-product">
+												<b class="mm_box-block">
+													<i class="mco_form-check"></i>
+													<span class="text_label mm_ir-blind">상품 선택</span>
+												</b>
+											</label>
+											<a href="productDetail.html" data-href="{ '_type': 'popup' }">
+												<figure>
+													<i class="mm_preload mm_bg-contain image_product" data-preload="{ '_src': '../images/_sample/product_x240_3.jpg' }"></i>
+													<figcaption>
+														<span class="text_brand">케네스레이디</span>
+														<span class="text_product">체크 플라워패턴 블라우스 EGBLHJ9600</span>
+														<span class="text_price">
+															<del>29,900</del>
+															<strong>20,260</strong>
+														</span>
+													</figcaption>
+												</figure>
+											</a>
+											<div class="mm_btngroup">
+												<button type="button" class="btn_delete"><i class="mco_delete"></i><span class="mm_ir-blind">상품삭제</span></button>
+												<button type="button" class="btn_add-cart"><i class="mco_cart"></i><span class="mm_ir-blind">장바구니에 담기</span></button>
+											</div>
+										</div>
+									</li>
+								</ul>															
+							</div>	
+							
+							<!-- 페이지네이션 -->
+							<div class="mm_pagination">
+								<div class="mm_box-inline">
+									<ol>
+										<li><a href="#" class="__page-on" title="선택됨"><span>1</span></a></li>
+										<li><a href="#"><span>2</span></a></li>
+										<li><a href="#"><span>3</span></a></li>
+									</ol>
+									<button type="button" class="btn_control-first" onclick="mm.link('')" disabled><i class="mco_page-first"></i><span class="mm_ir-blind">처음</span></button>
+									<button type="button" class="btn_control-prev" onclick="mm.link('')" disabled><i class="mco_page-prev"></i><span class="mm_ir-blind">이전</span></button>
+									<button type="button" class="btn_control-next" onclick="mm.link('')"><i class="mco_page-next"></i><span class="mm_ir-blind">다음</span></button>
+									<button type="button" class="btn_control-last" onclick="mm.link('')"><i class="mco_page-last"></i><span class="mm_ir-blind">마지막</span></button>
+								</div>
+							</div>
+							<!--// 페이지네이션 -->
+							
+							<div class="mm_btngroup">
+								<button type="button" class="mm_btn __btn_lg_dark__"><span>선택삭제</span></button>										
+							</div>
+														
+						</div>
+						<!--// 본문 -->
+						
+						<!-- 푸터 -->
+						<div id="mm_footer" class="mm_footer">
+							<!-- 푸터 - sns -->
+							<div class="mm_footer-sns">
+								<ul class="mm_box-flex __flex_equal__">
+									<li><a href="https://www.facebook.com/enter6onlinemall/" class="btn_facebook" target="_blank" title="새 창 열림"><i class="mco_sns-facebook"></i><span class="mm_ir-blind">페이스북</span></a></li>
+									<li><a href="https://www.instagram.com/enter6_onlinemall/" class="btn_instagram" target="_blank" title="새 창 열림"><i class="mco_sns-instagram"></i><span class="mm_ir-blind">인스타그램</span></a></li>
+									<li><a href="http://blog.enter6.co.kr/" class="btn_blog" target="_blank" title="새 창 열림"><i class="mco_sns-blog"></i><span class="mm_ir-blind">블로그</span></a></li>
+									<li><a href="https://twitter.com/Enter_6" class="btn_twitter" target="_blank" title="새 창 열림"><i class="mco_sns-twitter"></i><span class="mm_ir-blind">트위터</span></a></li>
+									<li><a href="https://story.kakao.com/ch/enter6" class="btn_kakaostory" target="_blank" title="새 창 열림"><i class="mco_sns-kakaostory"></i><span class="mm_ir-blind">카카오스토리</span></a></li>
+								</ul>
+							</div>
+							<!--// 푸터 - sns -->
+							
+							<!-- 푸터 - 공지사항 -->
+							<div class="mm_footer-notice">
+								<section class="mm_footer-notice-list">
+									<h5><span>공지사항</span></h5>
+									<ul>
+										<li><a href="_popup_csNoticeDetail.html" data-href="{ '_type': 'popup' }"><p>2018년 10월 신용카드 무이자할부 혜택</p></a></li>
+										<li><a href="_popup_csNoticeDetail.html" data-href="{ '_type': 'popup' }"><p>사이트 정기점검 안내</p></a></li>
+									</ul>
+									<a href="#" class="btn_more" data-href="{ '_type': 'link' }"><i class="mco_more"></i><span class="mm_ir-blind">더보기</span></a>
+								</section>
+								<section class="mm_footer-notice-cs">
+									<h5><span>고객센터</span></h5>
+									<p>1566 - 6222 (10:00 ~ 17:00)<br>12:30 ~ 13:30 및 주말 제외</p>
+									<a href="#" class="btn_more" data-href="{ '_type': 'link' }"><i class="mco_more"></i><span class="mm_ir-blind">더보기</span></a>
+								</section>
+							</div>
+							<!--// 푸터 - 공지사항 -->
+							
+							<!-- 푸터 - 메뉴 -->
+							<div class="mm_footer-menu">
+								<ul class="mm_box-flex __flex_equal__">
+									<li><a href="_popup_login.html" data-href="{ '_type': 'popup' }"><span>로그인</span></a></li>
+									<!-- <li><a href="#"><span>로그아웃</span></a></li> -->
+									<li><a href="csMain.html" data-href="{ '_type': 'link' }"><span>고객센터</span></a></li>
+									<li><a href="_popup_csAlliance.html" data-href="{ '_type': 'popup' }"><span>입점문의</span></a></li>
+									<li><a href="#" target="_blank" title="새 창 열림"><span>PC버전</span></a></li>
+								</ul>
+							</div>
+							<!--// 푸터 - 메뉴 -->
+							
+							<!-- 푸터 - 정보 -->
+							<div class="mm_footer-info">
+								<h6><span>(주)엔터식스 패션쇼핑몰</span></h6>
+								<address>
+									<span>대표이사: 김상대</span>
+									<span>개인정보담당자: 김경원</span><br>
+									<span>서울특별시 광진구 광나루로 56길 85 37층, 38층, 39층</span><br>
+									<span>사업자등록번호: 120-81-45616</span>
+									<span>대표전화: <a href="tel:1566-6222" class="btn_tel" title="전화하기">1566-6222</a></span><br>
+									<span>FAX: 031-762-0537</span>
+									<span>MAIL: <a href="mailto:help@enter6.co.kr" title="새 창 열림">HELP@ENTER6.CO.KR</a></span><br>
+									<span>통신판매업신고: 2017-서울광진-0523호</span>
+									<span><a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=&apv_perm_no=2017304019030200523" class="btn_licensee" data-href="{}" target="_blank" title="새 창 열림"><span>사업자정보확인 &#62;</span></a></span>
+								</address>
+								<dl class="mm_footer-info-ascrow">
+									<dt>NICE구매안전(에스크로)서비스</dt>
+									<dd>안전거래를 위해 나이스페이먼츠 구매안전(에스크로)에 가입하여<br> 서비스를 제공하고 있습니다. <a href="https://pg.nicepay.co.kr/issue/IssueEscrow.jsp?Mid=entersix0m&CoNo=1208145616" data-href="{}" target="_blank" title="새 창 열림"><span>서비스 가입사실 확인 &#62;</span></a></dd>
+								</dl>
+								<ul class="mm_footer-info-menu">
+									<li><a href="#" target="_blank" title="새 창 열림"><span>회사소개</span></a></li>
+									<li><a href="_popup_termsUse.html" data-href="{ '_type': 'popup' }"><span>이용약관</span></a></li>
+									<li><a href="_popup_termsPrivacy.html" data-href="{ '_type': 'popup' }"><span>개인정보처리방침</span></a></li>
+									<li><a href="_popup_termsAdolescent.html" data-href="{ '_type': 'popup' }"><span>청소년보호정책</span></a></li>
+								</ul>
+								<p class="text_copyright">&copy; (주)엔터식스 패션쇼핑몰. All rights reserved.</p>
+							</div>
+							<!--// 푸터 - 정보 -->
+						</div>
+						<!--// 푸터 -->
+					</div>
+					<a href="#mm_app" class="btn_topmost" data-href="{ '_type': 'anchor' }" title="페이지 처음으로 가기"><i class="mco_topmost"></i><span>TOP</span></a>
+				</div>
+			</div>
+			<!--// 내용 -->
+			
+			<!-- 툴바 -->
+			<div class="mm_toolbar">
+				<ul class="mm_box-flex __flex_equal__">
+					<li>
+						<button type="button" title="펼쳐보기" onclick="mm.sidebar.open();">
+							<i class="mco_menu"></i>
+							<span>카테고리</span>
+						</button>
+					</li>
+					<li>
+						<a href="#" data-href="{ '_type': 'link' }">
+							<i class="mco_mypage"></i>
+							<span>마이페이지</span>
+						</a>
+					</li>
+					<li>
+						<a href="/" data-href="{ '_type': 'home' }">
+							<i class="mco_home"></i>
+							<span>홈</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-href="{ '_type': 'link' }">
+							<i class="mco_cart"><span class="text_badge">2</span></i>
+							<span>장바구니</span>
+						</a>
+					</li>
+					<li>
+						<a href="_popup_recent.html" data-href="{ '_type': 'popup' }">
+							<i class="mco_recent"></i>
+							<span>최근본상품</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--// 툴바 -->
+		</div>
+		<!--// 화면 -->
+		
+		<!-- 사이드바 -->
+		<!--
+			(D) 사이드바 상태 값
+			__side: 사이드바 열림 (html에 추가)
+			회원 등급에 따라 mm_sidebar 요소에 __sidebar_vip__, __sidebar_gold__, __sidebar_silver__, __sidebar_family__ 클래스를 추가합니다.
+		-->
+		<div id="mm_sidebar" class="mm_sidebar __sidebar_gold__">
+			<button type="button" class="btn_sidebar-area" onclick="mm.sidebar.close();"><span class="mm_ir-blind">카테고리 숨기기</span></button>
+			<div class="mm_sidebar-inner">
+				<div class="mm_box-flexcolumn">
+					<div class="mm_sidebar-head">
+						<p class="text_member"><i class="mm_preload mm_bg-cover image_grade" data-preload="{ '_src': '../images/_sample/member_grade_gold.png' }"></i><span>GOLD 홍길동님</span></p>
+						<button type="button" class="btn_sidebar-close" onclick="mm.sidebar.close();"><b><i class="mco_close"></i><span class="mm_ir-blind">카테고리 숨기기</span></b></button>
+					</div>
+					<div class="mm_flex-equal">
+						<div class="mm_scroller mm_box-full">
+							<div class="mm_sidebar-mymenu">
+								<ul class="mm_box-flex __flex_equal__">
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_mypage"></i><span>마이페이지</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_order"></i><span>주문/배송</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_cart"></i><span>장바구니</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_like"></i><span>MY 찜</span></a></li>
+								</ul>
+							</div>
+							<hr class="mm_line">
+							<section class="mm_sidebar-category">
+								<h5 class="mm_heading"><span>카테고리</span></h5>
+								<ul>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_woman__"></i><span>여성패션</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_man__"></i><span>남성패션</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_unisex__"></i><span>유니섹스/캐주얼</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_underware__"></i><span>언더웨어</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_kids__"></i><span>키즈/베이비</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_leisure__"></i><span>스포츠/레저</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_style__"></i><span>잡화/명품/뷰티</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mm_ico-category __ico_life__"></i><span>라이프스타일</span></a></li>
+								</ul>
+							</section>
+							<hr class="mm_line">
+							<section class="mm_sidebar-brand">
+								<h5 class="mm_heading"><span>브랜드</span></h5>
+								<div class="mm_sidebar-brand-list">
+									<!-- (D) 현재페이지의 a 요소에 "__on" 클래스와 "선택됨" 타이틀을 추가합니다. -->
+									<div class="mm_swiper" data-swiper="{ '_type': 'swiper_free', 'configs': { 'spaceBetween': 5 } }">
+										<div class="mm_swiper-inner">
+											<ul class="swiper-wrapper">
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand111.jpg', '_isErrorImage': false }"><span>프리로드에러샘플</span></i></a></li>
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_bg-cover mm_image-brand"><span>이미지없음샘플</span></i></a></li>
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand4.jpg', '_isErrorImage': false }"><span>휠라</span></i></a></li>
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand3.jpg', '_isErrorImage': false }"><span>라코스테</span></i></a></li>
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand5.jpg', '_isErrorImage': false }"><span>아디다스</span></i></a></li>
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand6.jpg', '_isErrorImage': false }"><span>디스커버리</span></i></a></li>
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand7.jpg', '_isErrorImage': false }"><span>푸마</span></i></a></li>
+												<li class="swiper-slide"><a href="#" data-href="{ '_type': 'link' }"><i class="mm_preload mm_bg-cover mm_image-brand" data-preload="{ '_src': '../images/_sample/brand8.jpg', '_isErrorImage': false }"><span>나이키</span></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<a href="#" data-href="{ '_type': 'link' }"><span>브랜드 찾기</span><i class="mco_search"></i></a>
+							</section>
+							<hr class="mm_line">
+							<div class="mm_sidebar-prodmenu">
+								<ul class="mm_box-flex __flex_equal__">
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_best"></i><span>베스트</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_deal"></i><span>스윗딜</span></a></li>
+									<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_now"></i><span>엔터식스 NOW</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="mm_sidebar-foot">
+						<ul class="mm_box-flex __flex_equal__">
+							<li><a href="#" data-href="{ '_type': 'link' }"><i class="mco_cs"></i><span>고객센터</span></a></li>
+							<li><a href="_popup_setup.html" data-href="{ '_type': 'popup' }"><i class="mco_setup"></i><span>설정</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 사이드바 -->
+		
+		<!-- 공통 페이지 스크립트 -->
+		<script src="../js/app_page-common.js"></script>
+	</div>
+</body>
+</html>

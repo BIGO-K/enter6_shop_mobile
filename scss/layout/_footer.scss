@@ -1,0 +1,238 @@
+@charset 'utf-8';
+
+/**
+** 푸터
+**/
+
+/// 푸터영역
+.mm_footer {
+	border-top: 1px solid #e8e8e8;
+	background: #f7f7f7;
+	
+	// 메인 아이프레임
+	.__mm_main__ & {
+		margin-top: 40px;
+	}
+	
+	// sns
+	&-sns {
+		padding: 0 16px;
+		border-bottom: 1px solid #e8e8e8;
+		text-align: center;
+		
+		li {
+			a {
+				display: block;
+				padding: 14px 0;
+				
+				[class*="mco_sns"] {
+					width: 30px;
+					height: 30px;
+					border: 2px solid #e8e8e8;
+					border-radius: 100%;
+					line-height: 26px;
+				}
+				
+				.mco_sns-facebook {
+					padding-right: 1px;
+					border-color: #66629b;
+					color: #66629b;
+					font-size: 17px;
+					line-height: 28px;
+				}
+				
+				.mco_sns-instagram {
+					border-color: #f08564;
+					color: #f08564;
+					font-size: 14px;
+				}
+				
+				.mco_sns-blog {
+					border-color: #8bc149;
+					color: #8bc149;
+					font-size: 12px;
+				}
+				
+				.mco_sns-twitter {
+					border-color: #5bcacb;
+					color: #5bcacb;
+					font-size: 13px;
+					line-height: 28px;
+				}
+				
+				.mco_sns-kakaostory {
+					border-color: #eecb26;
+					color: #eecb26;
+					font-size: 14px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+
+	// 공지사항
+	&-notice {
+		padding: 12px 0 10px;
+		background: #fff;
+		@include clearfix;
+
+		section {
+			float: left;
+			position: relative;
+			padding: 0 10px;
+			width: 50%;
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 15px;
+
+			h5 {
+				margin-bottom: 4px;
+				font-weight: 400;
+				font-size: 13px;
+			}
+			
+			.btn_more {
+				position: absolute;
+				top: -3px;
+				right: 6px;
+				padding: 5px;
+				color: #9f9f9f;
+				font-size: 15px;
+			}
+		}
+
+		&-list {
+			padding-right: 20px;
+			
+			a {
+				display: block;
+				@include text-ellipsis(1);
+			}
+		}
+
+		&-cs {
+			
+		}
+	}
+
+	// 메뉴
+	&-menu {
+		ul {
+			height: 39px;
+			
+			li {
+				position: relative;
+				
+				&:nth-child(n+2) {
+					padding-left: 1px;
+					
+					&:before {
+						position: absolute;
+						left: 0;
+						top: 50%;
+						margin-top: -4px;
+						height: 8px;
+						border-left: 1px solid #cfcfcf;
+						content: "";
+					}
+				}
+			}
+			
+			a {
+				font-weight: 300;
+				font-size: 13px;
+				line-height: 39px;
+			}
+		}
+	}
+
+	// 정보
+	&-info {
+		padding: 6px 8px 13px;
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 15px;
+
+		h6 {
+			margin-bottom: 4px;
+			font-weight: 400;
+			font-size: 14px;
+		}
+		
+		address {
+			> span {
+				display: inline-block;
+				margin-right: 14px;
+				
+				a:not(.btn_tel) {
+					position: relative;
+					
+					&:before {
+						position: absolute;
+						right: -2px;
+						bottom: 0;
+						left: 0;
+						border-top: 1px solid #121212;
+						content: "";
+						@include transform(scaleY(0.5));
+					}
+				}
+				
+				.btn_licensee {
+					margin-left: -8px;
+				}
+			}
+		}
+
+		&-ascrow {
+			margin-top: 6px;
+			
+			a {
+				position: relative;
+				margin-left: 6px;
+				
+				&:before {
+					position: absolute;
+					right: -2px;
+					bottom: 0;
+					left: 0;
+					border-top: 1px solid #121212;
+					content: "";
+					@include transform(scaleY(0.5));
+				}
+			}
+		}
+		
+		&-menu {
+			margin: 8px 0 3px -11px;
+			
+			li {
+				float: left;
+				position: relative;
+				padding-left: 0;
+				
+				&:nth-child(n+2) {
+					&:before {
+						position: absolute;
+						top: 50%;
+						left: 0;
+						margin-top: -5px;
+						height: 10px;
+						border-left: 1px solid #000;
+						content: "";
+					}
+				}
+			}
+			
+			a {
+				padding: 0 9px;
+				line-height: 20px;
+			}
+		}
+
+		.text_copyright {
+			color: #999;
+		}
+	}
+}
+///-- 푸터영역

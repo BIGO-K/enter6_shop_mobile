@@ -1,0 +1,348 @@
+@charset 'utf-8';
+
+/**
+** 페이지
+** 고객센터
+**/
+
+/// 고객센터 hr라인 높이 border-bottom과 겹침
+[class*="m-cs"] {
+	+ hr {
+		height: 8px;
+	}
+}
+///-- 고객센터 hr라인
+
+/// 고객센터메인 상단메뉴
+.m-cs-main-menu {
+	li {
+		float: left;
+		width: 50%;
+		border-right: 1px solid #e1e1e1;
+		border-bottom: 1px solid #e1e1e1;
+		text-align: center;
+
+		&:nth-child(2n) {
+			border-right: 0;
+		}
+
+		a {
+			display: block;
+		}
+	}
+
+	figure {
+		position: relative;
+		padding: 20px 0 21px;
+
+		i {
+			height: 30px;
+			color: #666;
+			font-size: 22px;
+			line-height: 30px;
+			
+			&.mco_edit {
+				font-size: 23px;
+			}
+			
+			&.mco_qna {
+				font-size: 27px;
+			}
+		}
+
+		figcaption {
+			margin-top: 8px;
+			color: #424242;
+			font-weight: 300;
+			font-size: 15px;
+		}
+	}
+}
+///-- 고객센터메인 상단메뉴
+
+/// 고객센터메인 정보
+.m-cs-main-info {
+	padding: 40px 0;
+	background-color: #f7f7f7;
+	text-align: center;
+
+	dt {
+		font-size: 17px;
+		line-height: 19px;
+
+		i {
+			margin: 1px 8px -1px 0;
+			color: #666;
+			font-size: 18px;
+		}
+	}
+	
+	dd {
+		margin-bottom: 6px;
+		color: $color_primary_base;
+		font-weight: 500;
+		font-size: 29px;
+		
+		a {
+			padding: 8px;
+		}
+	}
+
+	.text_add {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+///-- 고객센터메인 정보
+
+/// 자주묻는질문 (고객센터 메인 공통)
+.m-cs-faq {
+	> .mm_heading {
+		padding-top: 35px;
+	}
+	
+    .btn_dropdown {
+        padding: 21px 41px;
+
+        &:before {
+			position: absolute;
+		    top: 20px;
+		    left: 15px;
+		    color: $color_primary_base;
+		    font-weight: 500;
+		    font-size: 19px;
+		    font-family: $fontFamily_latin;
+		    content: "Q";
+        }
+    }
+
+    .mm_dropdown-item-inner {
+        padding: 21px 41px;
+
+        &:before {
+			position: absolute;
+		    top: 19px;
+		    left: 23px;
+		    color: $color_primary_base;
+		    content: "ㄴ";
+        }
+    }
+
+    &-menu {
+        li {
+            float: left;
+            width: 50%;
+            border-right: 1px solid #e1e1e1;
+            border-bottom: 1px solid #e1e1e1;
+
+            a {
+                width: 100%;
+				
+				&.__on {
+					figure {
+						i {
+							color: $color_primary_base;
+						}
+						
+						figcaption {
+							color: $color_primary_base;
+						}
+					}
+				}
+            }
+        }
+
+        figure {
+            position: relative;
+            padding: 29px 0 29px 51px;
+
+            i {
+                position: absolute;
+                top: 50%;
+                left: 16px;
+				width: 26px;
+                color: #666;
+				text-align: center;
+                @include transform(translateY(-50%));
+
+                &.mco_mypage {
+                    font-size: 16px;
+                }
+
+                &.mco_card {
+                    font-size: 16px;
+                }
+
+                &.mco_delivery {
+					margin-top: 1px;
+                    font-size: 16px;
+                }
+
+                &.mco_refund {
+                    font-size: 19px;
+                }
+
+                &.mco_coupon {
+                    font-size: 13px;
+                }
+
+                &.mco_event {
+                    font-size: 18px;
+                }
+            }
+
+            figcaption {
+                color: #424242;
+                font-size: 14px;
+            }
+        }
+    }
+}
+///-- 자주묻는질문 (고객센터 메인 공통)
+
+/// 공지사항 (고객센터 메인 공통)
+.m-cs-notice {
+	position: relative;
+    // padding-bottom: 20px;
+    
+	> .mm_heading {
+		padding-top: 35px;
+		border-bottom: 1px solid #e1e1e1;
+	}
+	
+	.btn_more {
+		position: absolute;
+		top: 27px;
+		right: 0;
+		padding: 12px 17px;
+		color: #949494;
+		font-size: 13px;
+		
+		.mco_link {
+			margin: 1px 0 -1px 6px;
+			color: #7b7b7b;
+			font-size: 12px;
+		}
+	}
+	
+	> .mm_form-select {
+		padding: 10px;
+		border-bottom: 1px solid #e1e1e1;
+	}
+    
+    &.mm_board-list {
+        ul {
+            border-top: 0;
+            
+            &.mm_board-list-notice {
+                background: #fefbfb;
+            }
+        }
+    }
+}
+///-- 공지사항 (고객센터 메인 공통)
+
+/// 1:1 문의하기
+.m-cs-inquiry {
+	> .mm_accordion {
+		margin-top: -1px;
+	}
+	
+    .btn_dropdown {
+        padding-left: 85px;
+
+        .text_status {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            color: #999;
+            @include transform(translateY(-50%));
+        }
+
+        .text_date {
+            display: block;
+			margin-bottom: -2px;
+            color: #999;
+            font-size: 12px;
+        }
+    }
+
+    .mm_dropdown-item-inner {
+        .m--inquiry-question {
+            position: relative;
+			
+			&:after {
+                position: absolute;
+				top: 2px;
+                left: -1px;
+			    color: $color_primary_base;
+			    font-weight: 500;
+			    font-size: 22px;
+			    font-family: $fontFamily_latin;
+			    content: "Q";
+            }
+
+            > p {
+                padding-left: 27px;
+            }
+        }
+
+        .m--inquiry-myinfo {
+            margin-top: 10px;
+
+            dl {
+                padding: 8px 12px 10px;
+                background-color: #fff;
+                border: 1px solid #e8e8e8;
+				
+				&:nth-child(n+2) {
+					margin-top: -1px;
+				}
+
+                dt {
+					margin-bottom: 2px;
+                    color: #7b7b7b;
+                    font-weight: 300;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .m--inquiry-answer {
+            position: relative;
+			margin: 17px -16px 0;
+			padding: 17px 16px 2px 32px;
+            border-top: 1px solid #e1e1e1;
+
+            &:after {
+				position: absolute;
+			    top: 15px;
+			    left: 14px;
+			    color: $color_primary_base;
+			    content: "ㄴ";
+            }
+
+            .text_writer {
+                display: block;
+                margin-top: 20px;
+            }
+
+            .text_date {
+				display: block;
+				margin-top: -1px;
+                color: #999;
+                font-size: 12px;
+            }
+        }
+    }
+	
+	> .mm_text-none {
+		margin-bottom: 13px;
+	}
+
+    .mm_btngroup {
+        margin-top: 27px;
+        padding: 0 9px;
+    }
+}
+///-- 1:1 문의하기

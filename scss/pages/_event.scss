@@ -1,0 +1,89 @@
+@charset 'utf-8';
+
+/**
+** 페이지
+** 이벤트, 혜택, 기획전
+**/
+
+.m-eventbenefit {
+    &-banner {
+        .mm_swiper {
+            a,
+            .image_banner {
+                display: block;   
+            }
+            
+            .swiper-pagination {
+                margin-bottom: 7px;
+            }
+        }
+    }
+    
+    &-notice {
+        position: relative;
+        padding-top: 25px;
+        
+        .mm_board-list {
+            > ul {
+                > li {
+                    > a {
+                        padding: 13px 15px 15px;
+                    }
+                }
+                
+                p {
+                    @include text-ellipsis(1);
+                }
+            }
+            
+            .btn_more {
+                position: absolute;
+                top: 22px;
+                right: 10px;
+                padding: 7px;
+                font-size: 13px;
+                
+                span {
+                    @include opacity(0.6);
+                }
+                
+                .mco_link {
+                    margin-left: 7px;
+                    color: #7b7b7b;
+                    font-size: 12px;
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+    
+    &-list {
+        // margin-bottom: -25px;
+        
+        figcaption {
+            padding: 12px 0 23px;
+            text-align: center;
+            
+            p {
+                padding-bottom: 7px;
+                font-size: 15px;
+                line-height: 19px;
+            }
+            
+            .text_period {
+                color: #7b7b7b;
+                font-size: 12px;
+                font-weight: 300;
+            }
+        }
+    }
+    
+    &-ongoing {
+        padding-top: 25px;
+        
+        a,
+        .image_event {
+            display: block;
+        }
+    }
+}
